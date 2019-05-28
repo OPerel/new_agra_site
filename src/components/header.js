@@ -2,6 +2,7 @@ import React from "react";
 import { StaticQuery, graphql, Link } from "gatsby";
 import PropTypes from "prop-types";
 import Img from 'gatsby-image';
+import './header.css';
 
 
 const Header = ({ siteTitle }) => (
@@ -32,29 +33,28 @@ const Header = ({ siteTitle }) => (
   } render={data => {
       const { edges } = data.allWordpressWpApiMenusMenusItems;
       return (
-        <nav
-        className="container-fluid"
-        style={{
-          padding: '30px',
-          backgroundColor: 'lightgrey',
-        }}>
+        <nav className="nav-container container-fluid">
           <div className="nav container">
             <Link to='/'>
               <Img fixed={data.wordpressWpMedia.localFile.childImageSharp.fixed}/>
             </Link>
-            {
-              edges[0].node.items.map((item, i) => {
-                return (
-                  <Link
-                  style={{margin: '20px'}}
-                  key={item.wordpress_id}
-                  to={`/${item.object_slug}`}
-                  >
-                    {item.title}
-                  </Link>
-                )
-              })
-            }
+            <ul>
+              {
+                edges[0].node.items.map((item, i) => {
+                  return (
+                    <li key={i}>
+                      <Link
+                      key={item.wordpress_id}
+                      to={`/${item.object_slug}`}
+                      activeClassName="active"
+                      >
+                        {item.title}
+                      </Link>
+                    </li>
+                  )
+                })
+              }
+            </ul>
           </div>
         </nav>
       )
