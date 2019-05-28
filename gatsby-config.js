@@ -34,7 +34,7 @@ module.exports = {
          * The base URL of the Wordpress site without the trailingslash and the protocol. This is required.
          * Example : 'gatsbyjsexamplewordpress.wordpress.com' or 'www.example-site.com'
          */
-        baseUrl: "localhost:80/new_agra_site.io/",
+        baseUrl: "localhost/new_agra_site.io/",
         // The protocol. This can be http or https.
         protocol: "http",
         // Indicates whether the site is hosted on wordpress.com.
@@ -109,6 +109,7 @@ module.exports = {
           "**/tags",
           "**/taxonomies",
           "**/users",
+          "**/menus",
         ],
         // Blacklisted routes using glob patterns
         excludedRoutes: ["**/posts/1456"],
