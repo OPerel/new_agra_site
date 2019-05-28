@@ -34,7 +34,7 @@ function SEO({ description, lang, meta, title }) {
         dir: "rtl"
       }}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      titleTemplate={`%s | ${site.siteMetadata.title}`} // add a constant template to title
       meta={[
         {
           name: `description`,
