@@ -7,6 +7,7 @@ export default ({ pageContext }) => {
         <Layout>
             <SEO title={pageContext.title} />
             <h1>{pageContext.title}</h1>
+            <h2>This is a post</h2>
             <p dangerouslySetInnerHTML={{ __html: pageContext.content }}></p>
         </Layout>
     )
