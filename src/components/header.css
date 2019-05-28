@@ -23,7 +23,6 @@
 }
 
 .active {
-  color: #5a5757;
   text-decoration: underline;
   cursor: default;
 }

@@ -20,11 +20,11 @@ const Header = ({ siteTitle }) => (
         }
       }
       wordpressWpMedia(slug:{eq:"logo"}) {
+        slug
         localFile {
           childImageSharp {
             fixed(width: 160, height: 69) {
               ...GatsbyImageSharpFixed_tracedSVG
-              originalName
             }
           }
         }
@@ -32,11 +32,13 @@ const Header = ({ siteTitle }) => (
     }`
   } render={data => {
       const { edges } = data.allWordpressWpApiMenusMenusItems;
+      const { fixed } = data.wordpressWpMedia.localFile.childImageSharp;
+      const alt = data.wordpressWpMedia.slug;
       return (
         <nav className="nav-container container-fluid">
           <div className="nav container">
             <Link to='/'>
-              <Img fixed={data.wordpressWpMedia.localFile.childImageSharp.fixed}/>
+              <Img fixed={fixed} alt={alt}/>
             </Link>
             <ul>
               {
