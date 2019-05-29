@@ -15,6 +15,7 @@ const Footer = () => (
               title
               wordpress_id
               object_slug
+              object
             }
           }
         }
@@ -47,7 +48,7 @@ const Footer = () => (
                               <li key={i}>
                                 <Link
                                 key={item.wordpress_id}
-                                to={`/${item.object_slug}`}
+                                to={item.object === 'page' ? `/${item.object_slug}` : `post/${item.object_slug}`}
                                 activeStyle={{
                                   textDecoration: 'underline',
                                   cursor: 'default',
