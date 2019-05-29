@@ -9,7 +9,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
+import Header from "./header";
+import Footer from "./footer";
 import "./bootstrap-grid.min.css";
 import "./layout.css"
 
@@ -29,10 +30,8 @@ const Layout = ({ children }) => (
         <Header siteTitle={data.site.siteMetadata.title} />
         <div className="container">
           <main>{children}</main>
-          <footer>
-            © {new Date().getFullYear()} נבנה ע"י אורי
-          </footer>
         </div>
+        <Footer />
       </>
     )}
   />
