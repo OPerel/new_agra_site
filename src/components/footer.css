@@ -1,0 +1,15 @@
+footer {
+  background-color: #050505;
+}
+
+.footer-menus {
+  display: flex;
+}
+
+.footer-menus ul {
+  list-style: none;
+}
+
+.footer-menus ul li {
+  margin: 0;
+}
