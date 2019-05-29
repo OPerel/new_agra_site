@@ -1,14 +1,14 @@
 import React from 'react';
 import Layout from "../components/layout";
-import SEO from '../components/seo';
+import PageLayout from '../components/pageLayout';
 
 export default ({ pageContext }) => {
   return (
     <Layout>
-      <div className="container">
+      <PageLayout>
         <h1>{pageContext.title}</h1>
         <p dangerouslySetInnerHTML={{ __html: pageContext.content }}></p>
-      </div>
+      </PageLayout>
     </Layout>
   )
 }
