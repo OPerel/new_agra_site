@@ -5,9 +5,10 @@ import SEO from '../components/seo';
 export default ({ pageContext }) => {
   return (
     <Layout>
-      <SEO title={pageContext.title} />
-      <h1>{pageContext.title}</h1>
-      <p dangerouslySetInnerHTML={{ __html: pageContext.content }}></p>
+      <div className="container">
+        <h1>{pageContext.title}</h1>
+        <p dangerouslySetInnerHTML={{ __html: pageContext.content }}></p>
+      </div>
     </Layout>
   )
 }

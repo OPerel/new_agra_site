@@ -38,6 +38,7 @@ a:active {
 a:hover {
   text-decoration: underline;
   outline-width: 0;
+  color: darkgreen;
 }
 
 a:visited {

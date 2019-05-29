@@ -1,17 +1,19 @@
 import React from "react";
 import { StaticQuery, graphql, Link } from "gatsby";
 import PropTypes from "prop-types";
-import Helmet from "react-helmet";
+// import Helmet from "react-helmet";
+import SEO from './seo';
 import Img from 'gatsby-image';
 import './header.css';
 
 
 const Header = ({ siteTitle }) => (
   <>
-    <Helmet>
-      {/* <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" /> */}
-      <link href="https://fonts.googleapis.com/css?family=Rubik:500&display=swap" rel="stylesheet" />
-    </Helmet>
+    <SEO title={siteTitle}/>
+    {/* <Helmet>
+       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" />
+       <link href="https://fonts.googleapis.com/css?family=Rubik:500&display=swap" rel="stylesheet" />
+    </Helmet> */}
     <StaticQuery query={
       graphql`{
         allWordpressWpApiMenusMenusItems(filter:{name:{eq:"Main"}}) {
