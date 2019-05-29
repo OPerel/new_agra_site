@@ -48,6 +48,11 @@ const Footer = () => (
                                 <Link
                                 key={item.wordpress_id}
                                 to={`/${item.object_slug}`}
+                                activeStyle={{
+                                  textDecoration: 'underline',
+                                  cursor: 'default',
+                                  color: 'darkgreen'
+                                }}
                                 >
                                   {item.title}
                                 </Link>
