@@ -28,47 +28,46 @@ const queryMenus = graphql`{
   }
 }`
 
-const Menus = (props) => {
-  return (
-    <StaticQuery query={queryMenus} render={data => {
-      const menus = selectMenus(props.menuList, data.allWordpressWpApiMenusMenusItems.edges).flat();
-      return (
-        <>
-          {
-            menus.map(menu => {
-              const items = menu.node.items;
-              return (
-                <div key={menu.node.name} className="menu">
-                  <h5>{menu.node.name}</h5>
-                  <ul key={menu.node.name}>
-                    {
-                      items.map((item, i) => {
-                        return (
-                          <li key={i}>
-                            <Link
-                            key={item.wordpress_id}
-                            to={item.object === 'page' ? `/${item.object_slug}` : `/post/${item.object_slug}`}
-                            activeStyle={{
-                              textDecoration: 'underline',
-                              cursor: 'default',
-                              color: 'darkgreen'
-                            }}
-                            >
-                              {item.title}
-                            </Link>
-                          </li>
-                        )
-                      })
-                    }
-                  </ul>
-                </div>
-              )
-            })
-          }
-        </>
-      )
-    }}/>
-  )
-}
+const Menus = (props) => (
+  <StaticQuery query={queryMenus} render={data => {
+    const menus = selectMenus(props.menuList, data.allWordpressWpApiMenusMenusItems.edges).flat();
+    return (
+      <>
+        {
+          menus.map(menu => {
+            const items = menu.node.items;
+            return (
+              <div key={menu.node.name} className="menu">
+                <h5>{menu.node.name}</h5>
+                <ul key={menu.node.name}>
+                  {
+                    items.map((item, i) => {
+                      return (
+                        <li key={i}>
+                          <Link
+                          key={item.wordpress_id}
+                          to={item.object === 'page' ? `/${item.object_slug}` : `/post/${item.object_slug}`}
+                          activeStyle={{
+                            textDecoration: 'underline',
+                            cursor: 'default',
+                            color: 'darkgreen'
+                          }}
+                          >
+                            {item.title}
+                          </Link>
+                        </li>
+                      )
+                    })
+                  }
+                </ul>
+              </div>
+            )
+          })
+        }
+      </>
+    )
+  }}/>
+)
+
 
 export default Menus;
