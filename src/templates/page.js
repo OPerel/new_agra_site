@@ -9,7 +9,7 @@ export default ({ pageContext }) => {
     <Layout>
       {/*<Img fluid={pageContext.featured_media.localFile.childImageSharp.fluid}/>*/}
       <PageLayout>
-        <h1>{pageContext.title}</h1>
+        <h1 dangerouslySetInnerHTML={{ __html: pageContext.title }}></h1>
         <div dangerouslySetInnerHTML={{ __html: pageContext.content }}></div>
       </PageLayout>
     </Layout>
