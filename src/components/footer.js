@@ -5,6 +5,8 @@ import Menus from './menus';
 import './footer.css';
 import '../images/dbl-up.png';
 
+const footerMenus = ['אתר אגרא', 'שירותים', 'כתבות אחרונות'];
+
 const Footer = () => (
   <StaticQuery query={
     graphql`{
@@ -22,7 +24,7 @@ const Footer = () => (
         <>
           <footer className="container-fluid">
             <div className="footer-menus container">
-              <Menus />
+              <Menus menuList={footerMenus}/>
             </div>
           </footer>
           <div className="bottom-footer container-fluid">
