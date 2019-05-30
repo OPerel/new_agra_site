@@ -11,6 +11,10 @@
   height: 100%;
 }
 
+.nav h5 {
+  display: none;
+}
+
 .nav ul {
   display: flex;
   margin: 0;
@@ -18,8 +22,20 @@
 }
 
 .nav ul li {
-  margin: 0 20px;
+  margin: 0 10px;
+  font-size: 0.6rem;
+}
+
+.nav ul li a {
+  color: darkgreen;
   font-weight: 500;
+}
+
+@media only screen and (min-width: 770px) {
+  .nav ul li {
+    margin: 0 20px;
+    font-size: 1.1rem;
+  }
 }
 
 .active {

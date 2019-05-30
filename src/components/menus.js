@@ -40,11 +40,11 @@ const Menus = (props) => {
               return (
                 <div key={menu.node.name} className="menu">
                   <h5>{menu.node.name}</h5>
-                  <ul key={menu.node.name} style={{listStyle: 'none'}}>
+                  <ul key={menu.node.name}>
                     {
                       items.map((item, i) => {
                         return (
-                          <li key={i} style={{margin: '8px 0'}}>
+                          <li key={i}>
                             <Link
                             key={item.wordpress_id}
                             to={item.object === 'page' ? `/${item.object_slug}` : `/post/${item.object_slug}`}

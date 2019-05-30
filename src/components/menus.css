@@ -9,6 +9,14 @@
   }
 }
 
+.menu ul {
+  list-style: none;
+}
+
+.menu ul li {
+    margin: 8px 0;
+}
+
 .menu ul li a {
   color: #777777;
 }
