@@ -1,13 +1,13 @@
 import React from 'react';
 import Layout from "../components/layout";
 import PageLayout from '../components/pageLayout';
+import PageHeader from '../components/pageHeader';
 
-// import Img from "gatsby-image";
-
-export default ({ pageContext }) => {
+export default ({ pageContext, data }) => {
+  const img = data.wordpressPage.featured_media.localFile.childImageSharp.fluid;
   return (
     <Layout>
-      {/*<Img fluid={pageContext.featured_media.localFile.childImageSharp.fluid}/>*/}
+      <PageHeader imgFile={img} title={pageContext.title} />
       <PageLayout>
         <h1 dangerouslySetInnerHTML={{ __html: pageContext.title }}></h1>
         <div dangerouslySetInnerHTML={{ __html: pageContext.content }}></div>
@@ -15,3 +15,20 @@ export default ({ pageContext }) => {
     </Layout>
   )
 }
+
+export const pageQuery = graphql`
+  query BlogPostByID($id: String!) {
+    wordpressPage(id: { eq: $id }) {
+      id
+      slug
+      featured_media {
+        localFile {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid_tracedSVG
+            }
+          }
+        }
+      }
+    }
+  }`
