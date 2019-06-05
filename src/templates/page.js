@@ -9,7 +9,7 @@ export default ({ pageContext, data }) => {
     <Layout>
       <PageHeader imgFile={img} title={pageContext.title} />
       <PageLayout>
-        <h1 dangerouslySetInnerHTML={{ __html: pageContext.title }}></h1>
+        {/*<h1 dangerouslySetInnerHTML={{ __html: pageContext.title }}></h1>*/}
         <div dangerouslySetInnerHTML={{ __html: pageContext.content }}></div>
       </PageLayout>
     </Layout>
@@ -17,7 +17,7 @@ export default ({ pageContext, data }) => {
 }
 
 export const pageQuery = graphql`
-  query BlogPostByID($id: String!) {
+  query BlogPageByID($id: String!) {
     wordpressPage(id: { eq: $id }) {
       id
       slug
@@ -25,7 +25,7 @@ export const pageQuery = graphql`
         localFile {
           childImageSharp {
             fluid {
-              ...GatsbyImageSharpFluid_tracedSVG
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }

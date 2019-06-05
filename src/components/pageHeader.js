@@ -3,7 +3,10 @@ import Img from 'gatsby-image';
 
 const PageHeader = (props) => (
   <>
-    <Img fluid={props.imgFile} />
+    <Img fluid={props.imgFile} style={{
+      marginBottom: '5%',
+      filter: 'saturate(60%)'
+    }}/>
   </>
 )
 
