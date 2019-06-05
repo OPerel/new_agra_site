@@ -30,7 +30,8 @@ const queryMenus = graphql`{
 
 const Menus = (props) => (
   <StaticQuery query={queryMenus} render={data => {
-    const menus = selectMenus(props.menuList, data.allWordpressWpApiMenusMenusItems.edges).flat();
+    const menusEdges = data.allWordpressWpApiMenusMenusItems.edges;
+    const menus = selectMenus(props.menuList, menusEdges).flat();
     return (
       <>
         {
