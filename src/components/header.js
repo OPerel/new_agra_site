@@ -3,6 +3,7 @@ import { StaticQuery, graphql, Link } from "gatsby";
 import PropTypes from "prop-types";
 // import Helmet from "react-helmet";
 import Menus from './menus';
+import DropDown from './dropDown';
 import SEO from './seo';
 import Img from 'gatsby-image';
 import './header.css';
@@ -28,7 +29,6 @@ const Header = ({ siteTitle }) => (
         }
       }`
     } render={data => {
-        // const { edges } = data.allWordpressWpApiMenusMenusItems;
         const { fixed } = data.wordpressWpMedia.localFile.childImageSharp;
         const alt = data.wordpressWpMedia.slug;
         return (
@@ -37,7 +37,8 @@ const Header = ({ siteTitle }) => (
               <Link to='/'>
                 <Img fixed={fixed} alt={alt}/>
               </Link>
-              <Menus menuList={['Main']} />
+              <div id="desktop"><Menus menuList={['Main']} /></div>
+              <div id="mobile"><DropDown /></div>
             </div>
           </nav>
         )

@@ -1,0 +1,28 @@
+#nav-btn {
+  background-color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.dropdown {
+  position: absolute;
+  left: 0.1px;
+  display: flex;
+  flex-direction: column;
+  min-width: 100px;
+  background-color: #ffffff;
+}
+
+.dropdown ul {
+  margin: 0;
+}
+
+.dropdown ul li {
+  margin: 10px 0;
+  padding: 10px 0 0;
+  border-top: solid 0.3px #cfcfcf;
+}
+
+.dropdown ul li a {
+  color: darkgreen;
+  font-size: 0.9rem;
+}

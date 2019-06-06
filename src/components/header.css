@@ -18,26 +18,38 @@
   display: none;
 }
 
-.nav ul {
+.nav #desktop ul {
   display: flex;
+  width: max-content;
   margin: 0;
   list-style: none;
 }
 
-.nav ul li {
-  margin: 0 10px;
-  font-size: 0.6rem;
+.nav #desktop ul li {
+  margin: 0 30px;
 }
 
-.nav ul li a {
+.nav #desktop ul li a {
   color: darkgreen;
+  font-size: 1rem;
   font-weight: 500;
 }
 
+#desktop {
+  display: none;
+}
+
+#mobile {
+  position: relative;
+}
+
 @media only screen and (min-width: 770px) {
-  .nav ul li {
-    margin: 0 20px;
-    font-size: 1.1rem;
+  #mobile {
+    display: none;
+  }
+
+  #desktop {
+    display: inherit;
   }
 }
 
