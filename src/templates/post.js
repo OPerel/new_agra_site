@@ -9,10 +9,13 @@ export default ({ pageContext, data }) => {
     <Layout>
       <PageLayout>
         <h1>{pageContext.title}</h1>
-        <Img
-        fluid={data.wordpressPost.featured_media.localFile.childImageSharp.fluid}
-        style={{ margin: '20px 0' }}
-        />
+        { data.wordpressPost.featured_media ?
+          <Img
+          fluid={data.wordpressPost.featured_media.localFile.childImageSharp.fluid}
+          style={{ margin: '20px 0' }}
+          /> :
+          <></>
+        }
         <p dangerouslySetInnerHTML={{ __html: pageContext.content }}></p>
       </PageLayout>
     </Layout>
