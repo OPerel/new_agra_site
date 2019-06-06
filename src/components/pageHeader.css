@@ -1,0 +1,16 @@
+.header-bg {
+  height: 40vh;
+  margin-bottom: 5%;
+  filter: saturate(50%);
+}
+
+.header-bg div {
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.header-bg div h1 {
+  margin: auto 0;
+  color: #ffffff;
+}
