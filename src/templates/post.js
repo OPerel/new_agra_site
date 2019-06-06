@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 import Layout from "../components/layout";
 import PageLayout from '../components/pageLayout';
 import Img from 'gatsby-image';
