@@ -1,0 +1,22 @@
+.post-heading {
+  font-size: 1.5rem;
+}
+
+.post-image {
+  margin-bottom: 20px;
+}
+
+.post-details, .post-content {
+  margin-bottom: 20px;
+  border-bottom: solid 0.3px #cfcfcf;
+  font-size: 0.9rem;
+}
+
+.post-details {
+  display: block;
+  padding-bottom: 20px;
+}
+
+.post-content {
+  padding-bottom: 40px;
+}

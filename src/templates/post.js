@@ -3,20 +3,45 @@ import { graphql } from 'gatsby';
 import Layout from "../components/layout";
 import PageLayout from '../components/pageLayout';
 import Img from 'gatsby-image';
+import './post.css';
 
 export default ({ pageContext, data }) => {
+  const d = new Date(pageContext.date);
+
+  var months = new Array ();
+  months[0] = "ינואר";
+  months[1] = "פברואר";
+  months[2] = "מרץ";
+  months[3] = "אפריל";
+  months[4] = "מאי";
+  months[5] = "יוני";
+  months[6] = "יולי";
+  months[7] = "אוגוסט";
+  months[8] = "ספטמבר";
+  months[9] = "אוקטובר";
+  months[10] = "נובמבר";
+  months[11] = "דצמבר";
+
+  const date = `${months[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()}`;
   return (
     <Layout>
       <PageLayout>
-        <h1>{pageContext.title}</h1>
-        { data.wordpressPost.featured_media ?
+        <h1 className="post-heading">{pageContext.title}</h1>
+        <span className="post-details">
+          פורסם ב<a href="#">{date}</a> ע"י <a href="#">{pageContext.author.name}</a>
+        </span>
+        {
+          data.wordpressPost.featured_media ?
           <Img
           fluid={data.wordpressPost.featured_media.localFile.childImageSharp.fluid}
-          style={{ margin: '20px 0' }}
+          className="post-image"
           /> :
           <></>
         }
-        <p dangerouslySetInnerHTML={{ __html: pageContext.content }}></p>
+        <p
+        className="post-content"
+        dangerouslySetInnerHTML={{ __html: pageContext.content }}
+        ></p>
       </PageLayout>
     </Layout>
   )

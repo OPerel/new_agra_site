@@ -1,7 +1,7 @@
 .header-bg {
   height: 40vh;
   margin-bottom: 5%;
-  filter: saturate(50%);
+  /* filter: brightness(70%); */
 }
 
 .header-bg div {
@@ -13,4 +13,5 @@
 .header-bg div h1 {
   margin: auto 0;
   color: #ffffff;
+  /* filter: brightness(1000%); */
 }
