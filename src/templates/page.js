@@ -10,15 +10,17 @@ export default ({ pageContext, data }) => {
     <Layout>
       <PageHeader imgFile={img} title={pageContext.title} />
       <PageLayout>
-        {/*<h1 dangerouslySetInnerHTML={{ __html: pageContext.title }}></h1>*/}
-        <div dangerouslySetInnerHTML={{ __html: pageContext.content }}></div>
+        <div
+        style={{ marginRight: '10px'}} 
+        dangerouslySetInnerHTML={{ __html: pageContext.content }}
+        ></div>
       </PageLayout>
     </Layout>
   )
 }
 
 export const pageQuery = graphql`
-  query BlogPageByID($id: String!) {
+  query PageByID($id: String!) {
     wordpressPage(id: { eq: $id }) {
       id
       slug

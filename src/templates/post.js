@@ -36,7 +36,7 @@ export default ({ pageContext, data }) => {
           fluid={data.wordpressPost.featured_media.localFile.childImageSharp.fluid}
           className="post-image"
           /> :
-          <></>
+          null
         }
         <p
         className="post-content"
