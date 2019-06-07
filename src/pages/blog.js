@@ -1,9 +1,10 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
+// import Img from 'gatsby-image';
 import Layout from '../components/layout';
 import PageLayout from '../components/pageLayout';
 import PageHeader from '../components/pageHeader';
+import PostPrev from '../components/postPrev';
 
 export default ({ data }) => {
   const img = data.wordpressPage.featured_media.localFile.childImageSharp.fluid;
@@ -14,17 +15,16 @@ export default ({ data }) => {
       <PageLayout>
         {
           edges.map((edge, i) => {
-            let { featured_media } = edge.node;
             return (
-              <div key={i}>
-                <h4 dangerouslySetInnerHTML={{ __html: edge.node.title }}></h4>
-                <p dangerouslySetInnerHTML={{ __html: edge.node.excerpt }}></p>
-                {
-                  featured_media
-                  ? <Img fixed={featured_media.localFile.childImageSharp.fixed} />
-                  : null
-                }
-              </div>
+              <PostPrev
+              key={edge.node.id}
+              slug={edge.node.slug}
+              author={edge.node.author.name}
+              date={edge.node.date}
+              title={edge.node.title}
+              excerpt={edge.node.excerpt}
+              img={edge.node.featured_media}
+              />
             )
           })
         }

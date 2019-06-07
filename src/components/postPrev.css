@@ -1,0 +1,21 @@
+.prev-body {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-column-gap: 10%;
+  margin-bottom: 20px;
+}
+
+.prev-body div {
+  grid-row-start: 1;
+  margin-bottom: 10px;
+}
+
+@media only screen and (min-width: 770px) {
+  .prev-body {
+    grid-template-columns: 3fr 1fr;
+  }
+
+  .prev-body div {
+    grid-row-start: auto;
+  }
+}
