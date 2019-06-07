@@ -13,11 +13,17 @@ export default ({ pageContext, data }) => {
         {
           pageContext.acf
           ? <div>
-              <p style={{ fontWeight: '500' }}>{pageContext.acf.motto}</p>
-              <p style=
+              <p
+              style={{ fontWeight: '500' }}
+              dangerouslySetInnerHTML={{ __html: pageContext.acf.motto }}
+              ></p>
+              <p
+              style=
                 {{ fontStyle: 'italic',
                 textAlign: 'left'
-              }}>{pageContext.acf.quote_author}</p>
+              }}
+              dangerouslySetInnerHTML={{ __html: pageContext.acf.quote_author }}
+              ></p>
             </div>
           : null
         }
