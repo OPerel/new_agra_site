@@ -51,12 +51,11 @@ export const pageQuery = graphql`
   query BlogPostByID($id: String!) {
     wordpressPost(id: { eq: $id }) {
       id
-      slug
       featured_media {
         localFile {
           childImageSharp {
             fluid {
-              ...GatsbyImageSharpFluid_tracedSVG
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }

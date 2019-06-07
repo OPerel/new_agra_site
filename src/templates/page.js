@@ -10,8 +10,19 @@ export default ({ pageContext, data }) => {
     <Layout>
       <PageHeader imgFile={img} title={pageContext.title} />
       <PageLayout>
+        {
+          pageContext.acf
+          ? <div>
+              <p style={{ fontWeight: '500' }}>{pageContext.acf.motto}</p>
+              <p style=
+                {{ fontStyle: 'italic',
+                textAlign: 'left'
+              }}>{pageContext.acf.quote_author}</p>
+            </div>
+          : null
+        }
         <div
-        style={{ marginRight: '10px'}} 
+        style={{ marginRight: '10px'}}
         dangerouslySetInnerHTML={{ __html: pageContext.content }}
         ></div>
       </PageLayout>
@@ -23,7 +34,6 @@ export const pageQuery = graphql`
   query PageByID($id: String!) {
     wordpressPage(id: { eq: $id }) {
       id
-      slug
       featured_media {
         localFile {
           childImageSharp {

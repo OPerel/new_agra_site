@@ -13,7 +13,7 @@ const Footer = () => (
       icon: file(relativePath:{eq: "dbl-up.png"}) {
         childImageSharp {
           fixed (width: 24, height: 24) {
-            ...GatsbyImageSharpFixed_tracedSVG
+            ...GatsbyImageSharpFixed
           }
         }
       }
@@ -24,12 +24,12 @@ const Footer = () => (
         <>
           <footer className="container-fluid">
             <div className="footer-menus container">
-              <Menus menuList={footerMenus}/>
+              <Menus menuList={footerMenus} />
             </div>
           </footer>
           <div className="bottom-footer container-fluid">
             <div className="btn-up"><button><Img fixed={upArrow} alt="double arrow" /></button></div>
-            <p className="container">© {new Date().getFullYear()} נבנה ע"י אורי</p>
+            <p className="container">נבנה ע"י אורי  {new Date().getFullYear()}</p>
           </div>
         </>
       )
