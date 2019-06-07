@@ -12,7 +12,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const result = await graphql(`
     {
-      allWordpressPage {
+      allWordpressPage(filter:{slug:{nin:"blog"}}) {
         edges {
           node {
             id
@@ -20,6 +20,7 @@ exports.createPages = async ({ graphql, actions }) => {
             template
             title
             content
+            excerpt
             acf {
               quote_author
               motto
@@ -32,10 +33,10 @@ exports.createPages = async ({ graphql, actions }) => {
           node {
             id
             slug
-            template
             title
             content
             date
+            excerpt
             author {
               slug
               name
