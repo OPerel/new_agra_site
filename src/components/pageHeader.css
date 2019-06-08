@@ -1,7 +1,16 @@
 .header-bg {
   height: 40vh;
   margin-bottom: 5%;
-  /* filter: brightness(70%); */
+}
+
+.header-bg::before {
+  background-color: rgba(0, 0, 0, 0.4);
+  background-blend-mode: overlay;
+}
+
+.header-bg::after {
+  background-color: rgba(0, 0, 0, 0.4);
+  background-blend-mode: overlay;
 }
 
 .header-bg div {
@@ -13,5 +22,4 @@
 .header-bg div h1 {
   margin: auto 0;
   color: #ffffff;
-  /* filter: brightness(1000%); */
 }
