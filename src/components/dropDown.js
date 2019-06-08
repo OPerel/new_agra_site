@@ -40,10 +40,11 @@ class DropDown extends Component {
     return (
       <StaticQuery query={menuham}
         render={data => {
+          const { fixed } = data.icon.childImageSharp;
           return (
             <div>
               <button id="nav-btn" onClick={this.showMenu}>
-                <Img fixed={data.icon.childImageSharp.fixed} />
+                <Img fixed={fixed} />
               </button>
               {
                 this.state.showMenu

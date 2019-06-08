@@ -19,7 +19,7 @@ const Footer = () => (
       }
     }`
   } render={data => {
-      const upArrow = data.icon.childImageSharp.fixed;
+      const { fixed } = data.icon.childImageSharp;
       return (
         <>
           <footer className="container-fluid">
@@ -28,7 +28,7 @@ const Footer = () => (
             </div>
           </footer>
           <div className="bottom-footer container-fluid">
-            <div className="btn-up"><button><Img fixed={upArrow} alt="double arrow" /></button></div>
+            <div className="btn-up"><button><Img fixed={fixed} alt="double arrow" /></button></div>
             <p className="container">נבנה ע"י אורי  {new Date().getFullYear()}</p>
           </div>
         </>

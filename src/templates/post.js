@@ -7,15 +7,19 @@ import PostInfo from '../components/postInfo';
 import './post.css';
 
 export default ({ pageContext, data }) => {
+  const { fluid } = data.wordpressPost.featured_media.localFile.childImageSharp;
   return (
     <Layout>
       <PageLayout>
-        <h1 className="post-heading">{pageContext.title}</h1>
+        <h1
+        className="post-heading"
+        dangerouslySetInnerHTML={{ __html: pageContext.title }}
+        ></h1>
         <PostInfo author={pageContext.author.name} date={pageContext.date} />
         {
           data.wordpressPost.featured_media ?
           <Img
-          fluid={data.wordpressPost.featured_media.localFile.childImageSharp.fluid}
+          fluid={fluid}
           className="post-image"
           /> :
           null

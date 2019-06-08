@@ -5,6 +5,7 @@ import PostInfo from './postInfo';
 import './postPrev.css';
 
 const PostPrev = (props) => {
+  const { fixed } = props.img.localFile.childImageSharp;
   return (
     <div>
       <h4 dangerouslySetInnerHTML={{ __html: props.title }}></h4>
@@ -12,7 +13,7 @@ const PostPrev = (props) => {
         <p dangerouslySetInnerHTML={{ __html: props.excerpt }}></p>
         {
           props.img
-          ? <Img fixed={props.img.localFile.childImageSharp.fixed} />
+          ? <Img fixed={fixed} />
           : null
         }
         <Link to={`/post/${props.slug}`}>קרא עוד</Link>
