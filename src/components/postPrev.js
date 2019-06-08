@@ -8,16 +8,19 @@ const PostPrev = (props) => {
   const { fixed } = props.img.localFile.childImageSharp;
   return (
     <div>
-      <h4 dangerouslySetInnerHTML={{ __html: props.title }}></h4>
-      <div className="prev-body">
-        <p dangerouslySetInnerHTML={{ __html: props.excerpt }}></p>
-        {
-          props.img
-          ? <Img fixed={fixed} />
-          : null
-        }
-        <Link to={`/post/${props.slug}`}>קרא עוד</Link>
-      </div>
+      <Link to={`/post/${props.slug}`}>
+        <div className="prev-body">
+          <div>
+            <h4 dangerouslySetInnerHTML={{ __html: props.title }}></h4>
+            <p dangerouslySetInnerHTML={{ __html: props.excerpt }}></p>
+          </div>
+          {
+            props.img
+            ? <Img fixed={fixed} className="prev-img" />
+            : null
+          }
+        </div>
+      </Link>
       <PostInfo author={props.author} date={props.date} />
     </div>
   )

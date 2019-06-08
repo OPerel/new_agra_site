@@ -2,11 +2,24 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-column-gap: 10%;
-  margin-bottom: 20px;
+  color: #000000;
+}
+
+.prev-body p {
+  opacity: 0.8;
+}
+
+.prev-body .prev-img {
+  grid-row: 1;
+}
+
+.prev-body:hover {
+  color: #000000;
+  text-decoration: underline;
+  filter: brightness(104%);
 }
 
 .prev-body div {
-  grid-row-start: 1;
   margin-bottom: 10px;
 }
 
@@ -15,7 +28,7 @@
     grid-template-columns: 3fr 1fr;
   }
 
-  .prev-body div {
-    grid-row-start: auto;
+  .prev-body .prev-img {
+    grid-row: auto;
   }
 }
