@@ -1,0 +1,49 @@
+.hero {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 90vh;
+  color: #ffffff;
+}
+
+.hero::before {
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: overlay;
+}
+
+.hero::after {
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: overlay;
+}
+
+.hero .hero-content {
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero .hero-content h1 {
+  margin: 0 0 0.4em;
+  font-family: monospace;
+  font-size: 3.8rem;
+}
+
+.hero .hero-content h4 {
+  margin: 0 0 1em;
+  font-size: 1.3rem;
+  font-weight: 100;
+}
+
+.hero .hero-content .btn-c {
+  background: none;
+  border: 1px solid #ffffff;
+}
+
+.hero .hero-content .btn-c:hover {
+  background-color: #ffffff;
+  color: darkgreen;
+}
