@@ -11,7 +11,7 @@ const queryClients = graphql`{
         wordpress_id
         localFile {
           childImageSharp {
-            fluid (maxWidth: 200, maxHeight: 100){
+            fluid (maxWidth: 150, maxHeight: 75){
               ...GatsbyImageSharpFluid_withWebp
             }
           }
@@ -26,7 +26,7 @@ const Clients = () => (
     render={data => {
       const { edges } = data.allWordpressWpMedia;
       return (
-        <section style={{ padding: '70px' }}>
+        <section style={{ padding: '70px 0' }}>
           <div className="clients container">
             {
               edges.map(edge => {
