@@ -11,7 +11,7 @@ const queryClients = graphql`{
         wordpress_id
         localFile {
           childImageSharp {
-            fluid (maxWidth: 150, maxHeight: 75){
+            fluid {
               ...GatsbyImageSharpFluid_withWebp
             }
           }
@@ -33,7 +33,7 @@ const Clients = () => (
               edges.map(edge => {
                 const { fluid } = edge.node.localFile.childImageSharp;
                 return (
-                  <div key={edge.node.wordpress_id} className="client-img-wrapper">
+                  <div key={edge.node.wordpress_id}>
                     <Img
                     key={edge.node.id}
                     fluid={fluid}

@@ -1,11 +1,7 @@
 .clients {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.client-img-wrapper {
-  width: 20%;
-  margin: 0.5%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  align-items: center;
 }
 
 .client-img {
