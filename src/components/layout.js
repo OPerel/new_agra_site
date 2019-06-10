@@ -27,6 +27,7 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
+        <div id="top" offset="-900"></div>
         <Header siteTitle={data.site.siteMetadata.title} />
         <div>{children}</div>
         <Footer />
