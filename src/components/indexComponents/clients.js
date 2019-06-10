@@ -44,6 +44,32 @@ const Clients = () => (
               })
             }
           </div>
+          <div className="clients-mobile">
+            <div className="slide-track">
+              {
+                edges.map(edge => {
+                  const { fluid } = edge.node.localFile.childImageSharp;
+                  return (
+                    <Img
+                    key={edge.node.id}
+                    fluid={fluid}
+                    />
+                  )
+                })
+              }
+              {
+                edges.map(edge => {
+                  const { fluid } = edge.node.localFile.childImageSharp;
+                  return (
+                    <Img
+                    key={edge.node.id}
+                    fluid={fluid}
+                    />
+                  )
+                })
+              }
+            </div>
+          </div>
         </section>
       )
     }}
