@@ -35,7 +35,7 @@
   margin: 0 10px;
 }
 
-/* @media only screen and (min-width: 992px) {
+@media only screen and (min-width: 992px) {
   .clients-mobile {
     display: none;
   }
@@ -54,4 +54,4 @@
   .client-img:hover {
     transform: scale(1.2);
   }
-} */
+}

@@ -4,6 +4,7 @@ import Hero from '../components/indexComponents/hero';
 import Services from '../components/indexComponents/services';
 import Clients from '../components/indexComponents/clients';
 import BlogSection from '../components/indexComponents/blogSection';
+import ContactSection from '../components/indexComponents/contactSection';
 
 export default () => {
   return (
@@ -12,12 +13,7 @@ export default () => {
       <Services />
       <Clients />
       <BlogSection />
-      <div
-      id="contact"
-      style={{
-        backgroundColor: '#ffffff',
-        height: '70vh'
-      }}></div>
+      <ContactSection />
     </Layout>
   )
 }

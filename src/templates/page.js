@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import Layout from "../components/layout";
 import PageLayout from '../components/pageLayout';
 import PageHeader from '../components/pageHeader';
+import ContactUs from '../components/contact';
 
 export default ({ pageContext, data }) => {
   const img = data.wordpressPage.featured_media.localFile.childImageSharp.fluid;
@@ -31,6 +32,11 @@ export default ({ pageContext, data }) => {
         style={{ marginRight: '10px'}}
         dangerouslySetInnerHTML={{ __html: pageContext.content }}
         ></div>
+        {
+          pageContext.slug === 'contact'
+          ? <ContactUs />
+          : null
+        }
       </PageLayout>
     </Layout>
   )
