@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql, StaticQuery} from 'gatsby';
 import Img from 'gatsby-image';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 import Menus from './menus';
 import './footer.css';
 import '../images/dbl-up.png';
@@ -28,7 +29,13 @@ const Footer = () => (
             </div>
           </footer>
           <div className="bottom-footer container-fluid">
-            <div className="btn-up"><button><Img fixed={fixed} alt="double arrow" /></button></div>
+            <div className="btn-up">
+              <button>
+                <AnchorLink href="#top">
+                  <Img fixed={fixed} alt="double arrow" />
+                </AnchorLink>
+              </button>
+            </div>
             <p className="container">נבנה ע"י אורי  {new Date().getFullYear()}</p>
           </div>
         </>

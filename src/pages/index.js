@@ -7,15 +7,20 @@ import BlogSection from '../components/indexComponents/blogSection';
 
 export default () => {
   return (
-    <Layout>
-      <Hero />
-      <Services />
-      <Clients />
-      <BlogSection />
-      <div style={{
-        backgroundColor: '#ffffff',
-        height: '70vh'
-      }}></div>
-    </Layout>
+    <>
+      <div id="top" offset="-900"></div>
+      <Layout>
+        <Hero />
+        <Services />
+        <Clients />
+        <BlogSection />
+        <div
+        id="contact"
+        style={{
+          backgroundColor: '#ffffff',
+          height: '70vh'
+        }}></div>
+      </Layout>
+    </>
   )
 }
