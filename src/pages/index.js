@@ -3,6 +3,7 @@ import Layout from '../components/layout';
 import Hero from '../components/indexComponents/hero';
 import Services from '../components/indexComponents/services';
 import Clients from '../components/indexComponents/clients';
+import BlogSection from '../components/indexComponents/blogSection';
 
 export default () => {
   return (
@@ -10,10 +11,7 @@ export default () => {
       <Hero />
       <Services />
       <Clients />
-      <div style={{
-        backgroundColor: '#f8f9f9',
-        height: '70vh'
-      }}></div>
+      <BlogSection />
       <div style={{
         backgroundColor: '#ffffff',
         height: '70vh'

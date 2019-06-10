@@ -27,6 +27,7 @@ const Clients = () => (
       const { edges } = data.allWordpressWpMedia;
       return (
         <section style={{ padding: '70px 0' }}>
+          <h2 style={{ textAlign: 'center' }}>הלקוחות שלנו</h2>
           <div className="clients container">
             {
               edges.map(edge => {
