@@ -46,12 +46,13 @@
     align-items: center;
   }
 
-  .client-img {
+  .clients .client-img {
+    width: 85%;
     transition: 1s;
     transform: scale(0.8);
   }
 
-  .client-img:hover {
+  .clients .client-img:hover {
     transform: scale(1.2);
   }
 }

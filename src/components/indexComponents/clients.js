@@ -12,7 +12,7 @@ const queryClients = graphql`{
         localFile {
           childImageSharp {
             fluid {
-              ...GatsbyImageSharpFluid_withWebp
+              ...GatsbyImageSharpFluid
             }
           }
         }
