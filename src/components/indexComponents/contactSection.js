@@ -1,11 +1,27 @@
 import React from 'react';
+import { graphql, StaticQuery } from 'gatsby';
 import ContactUs from '../contact';
+import './contactSection.css';
 
 const ContactSection = () => (
-  <div className="container">
-    <h2>צור קשר</h2>
-    <ContactUs />
-  </div>
+  <StaticQuery
+    query={graphql`{
+      wordpressPage(slug: { eq: "contact" }) {
+        content
+      }
+    }`}
+    render={data => {
+      return(
+        <section style={{ padding: '70px 0' }}>
+          <h2 style={{ textAlign: 'center' }}>צור קשר</h2>
+          <div className="contact-section container">
+            <ContactUs />
+            <div dangerouslySetInnerHTML={{ __html: data.wordpressPage.content }}></div>
+          </div>
+        </section>
+      )
+    }}
+  />
 )
 
 export default ContactSection;

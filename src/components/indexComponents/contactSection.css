@@ -1,0 +1,10 @@
+.contact-section {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media only screen and (min-width: 770px) {
+  .contact-section {
+    grid-template-columns: 3fr 1fr;
+  }
+}
