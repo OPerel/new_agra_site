@@ -4,14 +4,14 @@ import Img from 'gatsby-image';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import Menus from './menus';
 import './footer.css';
-import '../images/dbl-up.png';
+import '../images/icons8-double-up-32.png';
 
 const footerMenus = ['אתר אגרא', 'שירותים', 'כתבות אחרונות'];
 
 const Footer = () => (
   <StaticQuery query={
     graphql`{
-      icon: file(relativePath:{eq: "dbl-up.png"}) {
+      icon: file(relativePath:{eq: "icons8-double-up-32.png"}) {
         childImageSharp {
           fixed (width: 24, height: 24) {
             ...GatsbyImageSharpFixed

@@ -51,3 +51,7 @@ footer {
 .bottom-footer .btn-up button Img {
   transform: rotate(-45deg);
 }
+
+.bottom-footer .btn-up button Img:hover {
+  filter: brightness(150%);
+}
