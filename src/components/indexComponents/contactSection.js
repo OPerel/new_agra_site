@@ -13,7 +13,7 @@ const ContactSection = () => (
     render={data => {
       return(
         <section style={{ padding: '70px 0' }}>
-          <h2 style={{ textAlign: 'center' }}>צור קשר</h2>
+          <h2 id="contact" style={{ textAlign: 'center' }}>צור קשר</h2>
           <div className="contact-section container">
             <ContactUs />
             <div dangerouslySetInnerHTML={{ __html: data.wordpressPage.content }}></div>
