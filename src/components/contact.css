@@ -36,6 +36,11 @@
   margin-right: 0;
 }
 
+.btn:disabled {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
 @media only screen and (min-width: 770px) {
   .contact input {
     width: 35%;
