@@ -77,11 +77,7 @@ class ContactUs extends Component {
 
   inputErrorFeedback(field) {
     const { valid, touched } = this.state.formFields[field];
-    let cssClass = 'contact-input';
-    if (touched && !valid) {
-      cssClass = 'contact-input input-error'
-    }
-    return cssClass;
+    return !valid && touched ? 'contact-input input-error' : 'contact-input';
   }
 
   render () {
