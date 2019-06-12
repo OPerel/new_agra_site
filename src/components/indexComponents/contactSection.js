@@ -15,7 +15,7 @@ const ContactSection = () => (
         <section style={{ padding: '70px 0' }}>
           <h2 id="contact" style={{ textAlign: 'center' }}>צור קשר</h2>
           <div className="contact-section container">
-            <ContactUs loc={homePage}/>
+            <ContactUs loc="homePage" action="/" />
             <div dangerouslySetInnerHTML={{ __html: data.wordpressPage.content }}></div>
           </div>
         </section>

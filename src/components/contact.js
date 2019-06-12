@@ -9,6 +9,7 @@ class ContactUs extends Component {
 
     this.state = {
       loc: props.loc,
+      action: props.action,
       formIsValid: false,
       formFields: {
         fname: {
@@ -62,29 +63,36 @@ class ContactUs extends Component {
     for (let input in updatedForm) {
       formIsValid = updatedForm[input].valid && formIsValid;
     }
-    console.log('formIsValid', formIsValid);
 
     this.setState({
       formFields: updatedForm,
       formIsValid: formIsValid
     })
-    console.log(this.state);
   }
 
-  // handleSubmit = e => {
-  //   e.preventDefault();
-  //   console.log(this.state);
-  // }
+  handleSubmit = e => {
+    e.preventDefault();
+    document.querySelector('.mSent').classList.remove('mSent');
+  }
 
   render () {
+    const { loc, action } = this.state;
     return (
       <form
-        id="con"
-        name={this.state.loc}
-        className="contact"
-        method="POST"
-        action="#"
-        >
+      id="con"
+      name={loc}
+      className="contact"
+      method="POST"
+      action={action}
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      onSubmit={this.handleSubmit}
+      >
+        <input
+        type="hidden"
+        name="form-name"
+        value={loc}
+        />
         <input
         type="text"
         name="fname"
@@ -109,6 +117,7 @@ class ContactUs extends Component {
         <Button text="שלח" disabled={!this.state.formIsValid}>
           <input type="submit" name="submit" />
         </Button>
+        <span className="mSent">ההודעה נשלחה בהצלחה</span>
       </form>
     )
   }
