@@ -34,7 +34,7 @@ export default ({ pageContext, data }) => {
         ></div>
         {
           pageContext.slug === 'contact'
-          ? <ContactUs />
+          ? <ContactUs loc='contactPage' />
           : null
         }
       </PageLayout>

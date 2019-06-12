@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql, StaticQuery } from 'gatsby';
 import BgImg from 'gatsby-background-image';
 import AnchorLink from 'react-anchor-link-smooth-scroll'
-import Button from './button';
+import Button from '../button';
 import './hero.css';
 
 const Hero = () => {
