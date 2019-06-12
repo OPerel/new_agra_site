@@ -3,10 +3,10 @@ import Menus from './menus';
 import { graphql, StaticQuery } from 'gatsby';
 import './dropDown.css';
 import Img from 'gatsby-image';
-import '../images/menuham.png';
+import '../images/icons8-menu-filled-50.png';
 
 const menuham = graphql`{
-  icon: file(relativePath:{eq: "menuham.png"}) {
+  icon: file(relativePath:{eq: "icons8-menu-filled-50.png"}) {
     childImageSharp {
       fixed (width: 45, height: 45) {
         ...GatsbyImageSharpFixed_tracedSVG
