@@ -2,14 +2,14 @@
   font-size: 0.8rem;
 }
 
-.contact input,
-.contact textarea {
+.contact-input {
   display: block;
   margin-bottom: 10px;
   padding: 5px;
   background-color: #efefef;
   border-radius: 5px;
   border: 0.5px solid #bbbbbb;
+  font-size: 1rem;
 }
 
 .contact input {
@@ -17,18 +17,16 @@
 }
 
 .contact textarea {
-  width: 100%;
+  width: 90%;
   height: 25vh;
 }
 
-.contact input:focus,
-.contact textarea:focus {
+.contact-input:focus {
   outline: none;
   background-color: #fafafa;
 }
 
-.contact input:hover,
-.contact textarea:hover {
+.contact-input:hover {
   box-shadow: 1px 1px 5px #cbcbcb;
 }
 
@@ -52,6 +50,16 @@
   }
 }
 
+.contact span {
+  margin-right: 5%;
+  font-size: 1rem;
+}
+
 .mSent {
   display: none;
+}
+
+.input-error {
+  color: #df7171;
+  border: 0.5px solid #df7171;
 }

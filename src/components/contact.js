@@ -72,7 +72,16 @@ class ContactUs extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    document.querySelector('.mSent').classList.remove('mSent');
+    document.getElementById('mSent').classList.remove('mSent');
+  }
+
+  inputErrorFeedback(field) {
+    const { valid, touched } = this.state.formFields[field];
+    let cssClass = 'contact-input';
+    if (touched && !valid) {
+      cssClass = 'contact-input input-error'
+    }
+    return cssClass;
   }
 
   render () {
@@ -99,6 +108,7 @@ class ContactUs extends Component {
         value={this.state.formFields.fname.value}
         placeholder="שם מלא"
         onChange={this.handleChange}
+        className={this.inputErrorFeedback('fname')}
         />
         <input
         type="email"
@@ -106,6 +116,7 @@ class ContactUs extends Component {
         value={this.state.formFields.email.value}
         placeholder="אי-מייל"
         onChange={this.handleChange}
+        className={this.inputErrorFeedback('email')}
         />
         <textarea
         form="con"
@@ -113,11 +124,12 @@ class ContactUs extends Component {
         value={this.state.formFields.message.value}
         placeholder="ההודעה שלך"
         onChange={this.handleChange}
+        className={this.inputErrorFeedback('message')}
         />
         <Button text="שלח" disabled={!this.state.formIsValid}>
           <input type="submit" name="submit" />
         </Button>
-        <span className="mSent">ההודעה נשלחה בהצלחה</span>
+        <span id="mSent" className="mSent">ההודעה נשלחה בהצלחה</span>
       </form>
     )
   }

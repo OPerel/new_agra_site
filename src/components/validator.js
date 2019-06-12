@@ -4,12 +4,12 @@ const validate = (value, rules) => {
   for (let rule in rules) {
 
     switch (rule) {
-        case 'isRequired':
-          isValid = isValid && requiredValidator(value); break;
-        case 'isEmail':
-          isValid = isValid && emailValidator(value); break;
-      	default:
-          isValid = true;
+      case 'isRequired':
+        isValid = isValid && requiredValidator(value); break;
+      case 'isEmail':
+        isValid = isValid && emailValidator(value); break;
+    	default:
+        isValid = true;
     }
   }
   return isValid;
