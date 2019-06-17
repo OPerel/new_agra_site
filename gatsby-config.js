@@ -38,9 +38,9 @@ module.exports = {
          * The base URL of the Wordpress site without the trailingslash and the protocol. This is required.
          * Example : 'gatsbyjsexamplewordpress.wordpress.com' or 'www.example-site.com'
          */
-        baseUrl: 'http://gator3160.temp.domains/~oriperelman/gatsby-wp',
+        baseUrl: process.env.API_URL,
         // The protocol. This can be http or https.
-        protocol: 'http',
+        protocol: process.env.API_PROTOCOL,
         // Indicates whether the site is hosted on wordpress.com.
         // If false, then the assumption is made that the site is self hosted.
         // If true, then the plugin will source its content on wordpress.com using the JSON REST API V2.
