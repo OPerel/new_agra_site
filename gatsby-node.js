@@ -63,7 +63,7 @@ exports.createPages = async ({ graphql, actions }) => {
   // The Page ID is prefixed with 'PAGE_'
   allWordpressPage.edges.forEach(edge => {
     createPage({
-      path: edge.node.slug,
+      path: `/${edge.node.slug}`,
       component: slash(pageTemplate),
       context: edge.node,
     })
