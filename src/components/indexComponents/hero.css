@@ -37,6 +37,11 @@
   font-weight: 100;
 }
 
+.hero .hero-content .btns {
+  display: flex;
+  justify-content: center;
+}
+
 .hero .hero-content .btn-c {
   background: none;
   border: 1px solid #ffffff;
@@ -51,7 +56,7 @@
   .hero .hero-content {
     width: 70%;
   }
-  
+
   .hero .hero-content h1 {
     font-size: 3.8rem;
   }
