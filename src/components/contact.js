@@ -122,7 +122,11 @@ class ContactUs extends Component {
         onChange={this.handleChange}
         className={this.inputErrorFeedback('message')}
         />
-        <Button text="שלח" disabled={!this.state.formIsValid}>
+        <Button
+        text="שלח"
+        disabled={!this.state.formIsValid}
+        classN="contact-btn"
+        >
           <input type="submit" name="submit" />
         </Button>
         <span id="mSent" className="mSent">ההודעה נשלחה בהצלחה</span>

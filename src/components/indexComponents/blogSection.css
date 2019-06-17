@@ -1,0 +1,12 @@
+.blog-btn {
+  display: block;
+  margin: 0 auto;
+  color: #207220;
+  background-color: transparent;
+  border: 0.5px solid #207220;
+}
+
+.blog-btn:hover {
+  color: #ffffff;
+  background-color: #207220;
+}

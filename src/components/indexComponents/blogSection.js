@@ -1,5 +1,8 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import BlogComponent from '../blogComponent';
+import Button from '../button';
+import './blogSection.css';
 
 const BlogSection = () => (
   <section style={{
@@ -9,6 +12,9 @@ const BlogSection = () => (
     <h2 style={{ textAlign: 'center' }}>כתבות אחרונות</h2>
     <div className="container">
       <BlogComponent />
+      <Link to="/blog" style={{ textDecoration: 'none' }}>
+        <Button text="לכל הכתבות" classN="blog-btn" />
+      </Link>
     </div>
   </section>
 )
