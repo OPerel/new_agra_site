@@ -3,6 +3,12 @@ import validate from './validator';
 import Button from '../components/button';
 import './contact.css';
 
+const encode = (data) => {
+  return Object.keys(data)
+  .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+  .join("&");
+}
+
 class ContactUs extends Component {
   constructor(props) {
     super(props);
@@ -41,7 +47,7 @@ class ContactUs extends Component {
     }
   }
 
-  handleChange = e => {
+  handleChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
 
@@ -70,9 +76,19 @@ class ContactUs extends Component {
     })
   }
 
-  handleSubmit = e => {
+  handleSubmit = async e => {
     e.preventDefault();
-    document.getElementById('mSent').classList.remove('mSent');
+    try {
+      const message = await fetch(`${this.state.action}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "contact", ...this.state })
+      });
+      document.getElementById('mSent').classList.remove('mSent');
+      return message;
+    } catch (err) {
+       console.log(err);
+    }
   }
 
   inputErrorFeedback(field) {
