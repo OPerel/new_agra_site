@@ -77,9 +77,8 @@ class ContactUs extends Component {
   }
 
   handleSubmit = async e => {
-    e.preventDefault();
     try {
-      const message = await fetch(`${this.state.action}`, {
+      const message = await fetch('', {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode({ "form-name": "contact", ...this.state })
@@ -89,6 +88,7 @@ class ContactUs extends Component {
     } catch (err) {
        console.log(err);
     }
+    e.preventDefault();
   }
 
   inputErrorFeedback(field) {
