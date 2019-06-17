@@ -4,6 +4,7 @@ import './serviceExcerpt.css';
 
 const ServiceExcerpt = ({ page }) => {
   const { fixed } = page.acf.icon.localFile.childImageSharp;
+  console.log(page.title);
   console.log(page.excerpt);
   return (
     <div className="service">
