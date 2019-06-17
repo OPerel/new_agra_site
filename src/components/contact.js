@@ -77,6 +77,7 @@ class ContactUs extends Component {
   }
 
   handleSubmit = async e => {
+    e.preventDefault();
     try {
       const message = await fetch(`${this.state.action}`, {
         method: "POST",
@@ -88,7 +89,6 @@ class ContactUs extends Component {
     } catch (err) {
        console.log(err);
     }
-    e.preventDefault();
   }
 
   inputErrorFeedback(field) {
