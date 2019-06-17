@@ -4,12 +4,12 @@ import './serviceExcerpt.css';
 
 const ServiceExcerpt = ({ page }) => {
   const { fixed } = page.acf.icon.localFile.childImageSharp;
-  const excerpt = page.excerpt.replace(/[p\<\>\/]/g, '').replace(/[\[\&helli\;\]]/g, '');
+  // const excerpt = page.excerpt.replace(/[p<>/[&helli;\]]/g, '');
   return (
     <div className="service">
       <div>
         <h4 dangerouslySetInnerHTML={{ __html: page.title }}></h4>
-        <p dangerouslySetInnerHTML={{ __html: `${excerpt} ...` }}></p>
+        <p dangerouslySetInnerHTML={{ __html: page.excerpt }}></p>
       </div>
       <Img fixed={fixed}/>
     </div>
