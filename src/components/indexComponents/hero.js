@@ -1,13 +1,13 @@
 import React from 'react';
 import { graphql, StaticQuery } from 'gatsby';
 import BgImg from 'gatsby-background-image';
-import { animated, useTrail, config } from 'react-spring';
+import { animated, useSpring, config } from 'react-spring';
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import Button from '../button';
 import './hero.css';
 
 const Hero = () => {
-  const trail = useTrail(1, {
+  const animateProps = useSpring({
     config: config.slow,
     transform: 'translateY(0)',
     from: { transform: 'translateY(400%)' }
@@ -28,7 +28,7 @@ const Hero = () => {
         }`
       } render={data => {
         const img = data.wordpressWpMedia.localFile.childImageSharp.fluid;
-        return trail.map(animateProps => (
+        return (
           <>
             <BgImg className="hero" fluid={img}>
               <div className="hero-content">
@@ -45,7 +45,7 @@ const Hero = () => {
               </div>
             </BgImg>
           </>
-        ))
+        )
       }}
     />
   )
