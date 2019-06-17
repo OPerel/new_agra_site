@@ -3,7 +3,7 @@ import React from 'react';
 const PostInfo = (props) => {
   const d = new Date(props.date);
 
-  var months = new Array ();
+  var months = [];
   months[0] = "ינואר";
   months[1] = "פברואר";
   months[2] = "מרץ";
@@ -20,7 +20,7 @@ const PostInfo = (props) => {
   const date = `${months[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()}`;
   return (
     <span className="post-details">
-      פורסם ב<a href="#">{date}</a> ע"י <a href="#">{props.author}</a>
+      פורסם ב {date} ע"י {props.author}
     </span>
   )
 }
