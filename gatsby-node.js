@@ -69,7 +69,7 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  const postTemplate = path.resolve("./src/templates/post.js")
+  const postTemplate = path.resolve("src/templates/post.js")
   // The Post ID is prefixed with 'POST_'
   allWordpressPost.edges.forEach(edge => {
     createPage({
