@@ -77,7 +77,6 @@ class ContactUs extends Component {
   }
 
   handleSubmit = async e => {
-    e.preventDefault();
     try {
       const message = await fetch(`${this.state.action}`, {
         method: "POST",
@@ -89,6 +88,7 @@ class ContactUs extends Component {
     } catch (err) {
        console.log(err);
     }
+    e.preventDefault();
   }
 
   inputErrorFeedback(field) {
@@ -97,14 +97,12 @@ class ContactUs extends Component {
   }
 
   render () {
-    const { loc, action } = this.state;
+    const { loc } = this.state;
     return (
       <form
       id="con"
       name={loc}
       className="contact"
-      method="POST"
-      action={action}
       data-netlify="true"
       netlify-honeypot="bot-field"
       onSubmit={this.handleSubmit}
