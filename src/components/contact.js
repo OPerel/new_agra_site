@@ -84,7 +84,8 @@ class ContactUs extends Component {
       fname: fname.value,
       email: email.value,
       message: message.value
-    }
+    };
+    
     e.preventDefault();
     try {
       const message = await fetch("/", {

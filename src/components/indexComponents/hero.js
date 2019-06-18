@@ -27,10 +27,10 @@ const Hero = () => {
           }
         }`
       } render={data => {
-        const img = data.wordpressWpMedia.localFile.childImageSharp.fluid;
+        const { fluid } = data.wordpressWpMedia.localFile.childImageSharp;
         return (
           <>
-            <BgImg className="hero" fluid={img}>
+            <BgImg className="hero" fluid={fluid}>
               <div className="hero-content">
                 <animated.h1 style={animateProps}>אגרא יעוץ ותכנון בע"מ</animated.h1>
                 <animated.h4 style={animateProps}>ניהול ותכנון – מתארי, פרוגרמטי, פונקציונלי, הנדסי וסביבתי. עשרות שנות ניסיון ביעוץ ותכנון לתעשייה, לוגיסטיקה, משרדי ממשלה, רשויות ממלכתיות ומקומיות, פרויקטים סביבתיים.</animated.h4>
