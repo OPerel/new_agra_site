@@ -50,7 +50,7 @@ export const pageQuery = graphql`
         localFile {
           childImageSharp {
             fluid {
-              ...GatsbyImageSharpFluid_withWebp
+              ...GatsbyImageSharpFluid
             }
           }
         }
