@@ -84,7 +84,7 @@ class ContactUs extends Component {
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode({ "form-name": this.state.loc, ...this.state.formFields })
       });
-      document.getElementById('mSent').classList.remove('mSent'));
+      document.getElementById('mSent').classList.remove('mSent');
       console.log(message);
       return message;
     } catch (err) {
