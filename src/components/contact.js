@@ -48,6 +48,8 @@ class ContactUs extends Component {
   }
 
   handleChange = (e) => {
+    document.getElementById('mSent').classList.add('mSent');
+
     const name = e.target.name;
     const value = e.target.value;
 
@@ -91,11 +93,17 @@ class ContactUs extends Component {
         body: encode({"form-name": this.state.loc, ...body})
       });
       document.getElementById('mSent').classList.remove('mSent');
-      console.log(message);
+      this.clearForm();
       return message;
     } catch (err) {
       console.log(err);
     }
+  }
+
+  clearForm() {
+    this.setState(state => {
+      return Object.keys(state.formFields).map(key => state.formFields[key].value = '')
+    });
   }
 
   inputErrorFeedback(field) {
