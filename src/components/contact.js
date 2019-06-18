@@ -81,7 +81,7 @@ class ContactUs extends Component {
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...this.state })
+      body: encode({ "form-name": this.state.loc, ...this.state })
     })
     .then(() => document.getElementById('mSent').classList.remove('mSent'))
     .catch(error => console.log(error));
