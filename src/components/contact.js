@@ -78,13 +78,18 @@ class ContactUs extends Component {
 
   handleSubmit = async e => {
     e.preventDefault();
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": this.state.loc, ...this.state })
-    })
-    .then(() => document.getElementById('mSent').classList.remove('mSent'))
-    .catch(error => console.log(error));
+    try {
+      const message = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": this.state.loc, ...this.state.formFields })
+      });
+      document.getElementById('mSent').classList.remove('mSent'));
+      console.log(message);
+      return message;
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   inputErrorFeedback(field) {
