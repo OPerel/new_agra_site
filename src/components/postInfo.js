@@ -20,7 +20,7 @@ const PostInfo = (props) => {
   const date = `${months[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()}`;
   return (
     <span className="post-details">
-      פורסם ב {date} ע"י {props.author}
+      פורסם ב{date} ע"י {props.author}
     </span>
   )
 }
