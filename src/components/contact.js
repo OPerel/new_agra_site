@@ -102,6 +102,7 @@ class ContactUs extends Component {
 
   clearForm() {
     this.setState(state => {
+      state.formIsValid = false
       return Object.keys(state.formFields).map(key => state.formFields[key].value = '')
     });
   }
