@@ -77,12 +77,18 @@ class ContactUs extends Component {
   }
 
   handleSubmit = async e => {
+    const {fname, email, message} = this.state.formFields;
+    const body = {
+      fname: fname.value,
+      email: email.value,
+      message: message.value
+    }
     e.preventDefault();
     try {
       const message = await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({ "form-name": this.state.loc, ...this.state.formFields })
+        body: encode({"form-name": this.state.loc, ...body})
       });
       document.getElementById('mSent').classList.remove('mSent');
       console.log(message);

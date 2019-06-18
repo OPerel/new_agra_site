@@ -6,7 +6,6 @@ import PageHeader from '../components/pageHeader';
 import ContactUs from '../components/contact';
 
 export default ({ pageContext, data }) => {
-  console.log(data.wordpressPage.featured_media.localFile);
   const img = data.wordpressPage.featured_media.localFile.childImageSharp.fluid;
   return (
     <Layout>
