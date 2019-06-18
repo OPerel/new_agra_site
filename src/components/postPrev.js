@@ -6,7 +6,6 @@ import './postPrev.css';
 
 const PostPrev = (props) => {
   const { fixed } = props.img.localFile.childImageSharp;
-  // const excerpt = props.excerpt.replace(/[p<>/[&helli;\]]/g, '');
   return (
     <div>
       <Link to={`/post/${props.slug}`}>

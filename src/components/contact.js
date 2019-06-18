@@ -81,11 +81,11 @@ class ContactUs extends Component {
   handleSubmit = async e => {
     const {fname, email, message} = this.state.formFields;
     const body = {
-      fname: fname.value,
+      name: fname.value,
       email: email.value,
       message: message.value
     };
-    
+
     e.preventDefault();
     try {
       const message = await fetch("/", {
