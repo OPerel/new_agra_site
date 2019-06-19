@@ -2,7 +2,7 @@ import React from 'react';
 import Sidebar from './sidebar';
 
 const PageLayout = (props) => (
-  <div className="container" style={props.style}>
+  <div className="container">
     <div className="row">
       <div className="col col-12 col-md-9">
         {props.children}

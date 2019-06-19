@@ -35,7 +35,7 @@ const Header = ({ siteTitle }) => (
           <nav className="nav-container container-fluid">
             <div className="nav container">
               <Link to='/'>
-                <Img fixed={fixed} alt={alt}/>
+                <Img fixed={fixed} alt={alt} />
               </Link>
               <div id="desktop"><Menus menuList={['Main']} /></div>
               <div id="mobile"><DropDown /></div>
