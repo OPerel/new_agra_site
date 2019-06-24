@@ -36,7 +36,7 @@ const Footer = () => (
                 </AnchorLink>
               </button>
             </div>
-            <p className="container">נבנה ע"י אורי  {new Date().getFullYear()}</p>
+            <p className="container">נבנה ע"י אורי  {new Date().getFullYear()} &copy;</p>
           </div>
         </>
       )
