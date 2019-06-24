@@ -4,7 +4,7 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `אגרא יעוץ ותכנון בע"מ`,
+    title: `אגרא יעוץ ותכנון בע&quotמ`,
     description: `יעוץ ותכנון. תכנון פונקציונלי, הכנת פרוגרמות, יעוץ סביבתי, וניהול פרוייקטים וצוותי תכנון.`,
     author: `https://github.com/OPerel`,
   },
