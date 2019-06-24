@@ -6,10 +6,10 @@ import PageHeader from '../components/pageHeader';
 import BlogComponent from '../components/blogComponent';
 
 export default ({ data }) => {
-  const img = data.wordpressPage.featured_media.localFile.childImageSharp.fluid;
+  const { fluid } = data.wordpressPage.featured_media.localFile.childImageSharp;
   return (
-    <Layout>
-      <PageHeader imgFile={img} title={data.wordpressPage.title} />
+    <Layout pageTitle={data.wordpressPage.title}>
+      <PageHeader imgFile={fluid} title={data.wordpressPage.title} />
       <PageLayout>
         <BlogComponent />
       </PageLayout>

@@ -8,7 +8,7 @@ import ContactUs from '../components/contact';
 export default ({ pageContext, data }) => {
   const img = data.wordpressPage.featured_media.localFile.childImageSharp.fluid;
   return (
-    <Layout>
+    <Layout pageTitle={pageContext.title}>
       <PageHeader imgFile={img} title={pageContext.title} />
       <PageLayout>
         {

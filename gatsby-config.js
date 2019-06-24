@@ -4,9 +4,9 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `אתר אגרא החדש`,
+    title: `אגרא יעוץ ותכנון בע"מ"`,
     description: `יעוץ ותכנון. תכנון פונקציונלי, הכנת פרוגרמות, יעוץ סביבתי, וניהול פרוייקטים וצוותי תכנון.`,
-    author: `@gatsbyjs`,
+    author: `https://github.com/OPerel`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

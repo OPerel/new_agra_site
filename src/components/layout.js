@@ -7,33 +7,19 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { StaticQuery, graphql } from "gatsby"
 
 import Header from "./header";
 import Footer from "./footer";
 import "./bootstrap-grid.min.css";
 import "./layout.css"
 
-const Layout = ({ children }) => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-      }
-    `}
-    render={data => (
-      <>
-        <div id="top" offset="-900"></div>
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <div>{children}</div>
-        <Footer />
-      </>
-    )}
-  />
+const Layout = ({ children, pageTitle }) => (
+  <>
+    <div id="top" offset="-900"></div>
+    <Header pageTitle={pageTitle} />
+    <div>{children}</div>
+    <Footer />
+  </>
 )
 
 Layout.propTypes = {

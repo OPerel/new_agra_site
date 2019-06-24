@@ -9,8 +9,9 @@ import './post.css';
 export default ({ pageContext, data }) => {
   const { fluid } = data.wordpressPost.featured_media.localFile.childImageSharp;
   return (
-    <Layout>
-      <PageLayout style={{ marginTop: '80px' }}>
+    <Layout pageTitle={pageContext.title}>
+      <div style={{ height: '80px', marginBottom: '5%' }}></div>
+      <PageLayout page="post">
         <h1
         className="post-heading"
         dangerouslySetInnerHTML={{ __html: pageContext.title }}

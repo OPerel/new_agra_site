@@ -8,9 +8,9 @@ import SEO from './seo';
 import Img from 'gatsby-image';
 import './header.css';
 
-const Header = ({ siteTitle }) => (
+const Header = ({ pageTitle }) => (
   <>
-    <SEO title={siteTitle}/>
+    <SEO title={pageTitle}/>
     {/* <Helmet>
        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" />
        <link href="https://fonts.googleapis.com/css?family=Rubik:500&display=swap" rel="stylesheet" />
