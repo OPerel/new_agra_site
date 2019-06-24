@@ -25,6 +25,7 @@ function SEO({ description, lang, meta, title }) {
     `
   )
 
+  const pageTitle = title ? title : site.siteMetadata.title;
   const metaDescription = description || site.siteMetadata.description;
 
   return (
@@ -33,8 +34,8 @@ function SEO({ description, lang, meta, title }) {
         lang: "he_IL",
         dir: "rtl"
       }}
-      title={title}
-      titleTemplate={title ? `${site.siteMetadata.title} | %s` : site.siteMetadata.title}
+      title={pageTitle}
+      titleTemplate={title ? `${site.siteMetadata.title} | %s` : ''}
       meta={[
         {
           name: `description`,
@@ -42,7 +43,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:title`,
-          content: title,
+          content: pageTitle,
         },
         {
           property: `og:description`,
@@ -71,7 +72,6 @@ SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
 }
 
 export default SEO;
