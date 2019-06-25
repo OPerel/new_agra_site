@@ -29,10 +29,16 @@
   font-size: 2.8rem;
 }
 
+/* firefox */
 @-moz-document url-prefix() {
   .hero .hero-content h1 {
     font-family: inherit;
   }
+}
+
+/* IE and Edge */
+_:-ms-lang(x), .hero .hero-content h1 {
+  font-family: inherit;
 }
 
 .hero .hero-content h4 {

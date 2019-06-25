@@ -41,10 +41,16 @@
   font-weight: 500;
 }
 
+/* firefox */
 @-moz-document url-prefix() {
   .nav #desktop ul li a {
     font-weight: 600;
   }
+}
+
+/* IE and Edge */
+_:-ms-lang(x), .nav #desktop ul li a {
+  font-weight: 600;
 }
 
 #desktop {
