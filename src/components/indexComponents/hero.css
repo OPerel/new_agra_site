@@ -1,6 +1,5 @@
 .hero {
   display: flex;
-  /* justify-content: center; */
   align-items: center;
   background-attachment: fixed;
   background-position: center;
@@ -11,11 +10,7 @@
   color: #ffffff;
 }
 
-.hero::before {
-  background-color: rgba(0, 0, 0, 0.5);
-  background-blend-mode: overlay;
-}
-
+.hero::before,
 .hero::after {
   background-color: rgba(0, 0, 0, 0.5);
   background-blend-mode: overlay;

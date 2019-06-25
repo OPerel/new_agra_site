@@ -57,10 +57,6 @@ function SEO({ description, lang, meta, title }) {
           name: `author`,
           content: site.siteMetadata.author,
         },
-        {
-          name: `test`,
-          content: `זה ניסוי ב &spades; וזה מעצבן`
-        }
       ].concat(meta)}
     />
   )
