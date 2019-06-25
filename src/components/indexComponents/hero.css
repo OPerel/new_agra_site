@@ -29,6 +29,12 @@
   font-size: 2.8rem;
 }
 
+@-moz-document url-prefix() {
+  .hero .hero-content h1 {
+    font-family: inherit;
+  }
+}
+
 .hero .hero-content h4 {
   margin: 0 0 1em;
   font-size: 1rem;

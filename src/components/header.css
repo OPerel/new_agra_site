@@ -41,6 +41,12 @@
   font-weight: 500;
 }
 
+@-moz-document url-prefix() {
+  .nav #desktop ul li a {
+    font-weight: 600;
+  }
+}
+
 #desktop {
   display: none;
 }
