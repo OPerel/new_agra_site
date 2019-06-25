@@ -6,8 +6,11 @@
 .dropdown {
   position: absolute;
   left: 0.1px;
+  display: -webkit-box;
   display: flex;
-  flex-direction: column;
+  -webkit-box-direction: normal;
+   -webkit-box-orient: vertical;
+         flex-direction: column;
   min-width: 100px;
   background-color: #ffffff;
 }

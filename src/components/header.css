@@ -8,9 +8,12 @@
 }
 
 .nav {
+  display: -webkit-box;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
   height: 100%;
 }
 
@@ -19,8 +22,11 @@
 }
 
 .nav #desktop ul {
+  display: -webkit-box;
   display: flex;
-  width: max-content;
+  width: -webkit-max-content;
+     width: -moz-max-content;
+          width: max-content;
   margin: 0;
   list-style: none;
 }

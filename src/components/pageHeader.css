@@ -16,7 +16,9 @@
 
 .header-bg div {
   height: 100%;
+  display: -webkit-box;
   display: flex;
+      -webkit-box-pack: start;
   justify-content: flex-start;
 }
 

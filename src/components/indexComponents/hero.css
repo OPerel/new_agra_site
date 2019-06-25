@@ -1,6 +1,8 @@
 .hero {
+  display: -webkit-box;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+        align-items: center;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -34,8 +36,10 @@
 }
 
 .hero .hero-content .btns {
+  display: -webkit-box;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+   justify-content: center;
 }
 
 .hero .hero-content .btn-c {

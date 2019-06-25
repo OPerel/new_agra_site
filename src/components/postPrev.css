@@ -16,7 +16,8 @@
 .prev-body:hover {
   color: #000000;
   text-decoration: underline;
-  filter: brightness(104%);
+  -webkit-filter: brightness(104%);
+          filter: brightness(104%);
 }
 
 .prev-body div {
