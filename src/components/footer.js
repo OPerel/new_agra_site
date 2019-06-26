@@ -36,7 +36,9 @@ const Footer = () => (
                 </AnchorLink>
               </button>
             </div>
-            <p className="container">נבנה ע"י אורי  {new Date().getFullYear()} &copy;</p>
+            <p className="container">
+              Developed by <a href="https://github.com/OPerel" target="_blank" rel="noopener noreferrer">Ori Perelman</a> &copy; {new Date().getFullYear()}
+            </p>
           </div>
         </>
       )
