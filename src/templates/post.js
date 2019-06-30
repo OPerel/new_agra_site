@@ -20,7 +20,7 @@ export default ({ pageContext, data }) => {
         {
           data.wordpressPost.featured_media ?
           <Img
-          fluid={data.wordpressPost.featured_media.localFile.childImageSharp}
+          fluid={data.wordpressPost.featured_media.localFile.childImageSharp.fluid}
           className="post-image"
           /> :
           null

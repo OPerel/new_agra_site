@@ -5,7 +5,7 @@ import PostInfo from './postInfo';
 import './postPrev.css';
 
 const PostPrev = (props) => {
-  const { fixed } = props.img.localFile.childImageSharp;
+  // const { fixed } = props.img.localFile.childImageSharp;
   return (
     <div>
       <Link to={`/post/${props.slug}`}>
@@ -16,7 +16,7 @@ const PostPrev = (props) => {
           </div>
           {
             props.img
-            ? <Img fixed={fixed} className="prev-img" />
+            ? <Img fixed={props.img.localFile.childImageSharp.fixed} className="prev-img" />
             : null
           }
         </div>
