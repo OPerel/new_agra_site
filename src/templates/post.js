@@ -32,10 +32,10 @@ export default ({ pageContext, data }) => {
           dangerouslySetInnerHTML={{ __html: featured_media.caption }}></p> :
           null
         }
-        <p
+        <div
         className="post-content"
         dangerouslySetInnerHTML={{ __html: pageContext.content }}
-        ></p>
+        ></div>
       </PageLayout>
     </Layout>
   )
