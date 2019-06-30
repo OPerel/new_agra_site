@@ -7,7 +7,7 @@ import PostInfo from '../components/postInfo';
 import './post.css';
 
 export default ({ pageContext, data }) => {
-  // const { fluid } = data.wordpressPost.featured_media.localFile.childImageSharp;
+  const { featured_media } = data.wordpressPost;
   return (
     <Layout pageTitle={pageContext.title}>
       <div style={{ height: '80px', marginBottom: '5%' }}></div>
@@ -18,11 +18,18 @@ export default ({ pageContext, data }) => {
         ></h1>
         <PostInfo author={pageContext.author.name} date={pageContext.date} />
         {
-          data.wordpressPost.featured_media ?
+          featured_media ?
           <Img
           fluid={data.wordpressPost.featured_media.localFile.childImageSharp.fluid}
           className="post-image"
           /> :
+          null
+        }
+        {
+          featured_media && featured_media.caption ?
+          <p
+          className="img-caption"
+          dangerouslySetInnerHTML={{ __html: featured_media.caption }}></p> :
           null
         }
         <p
@@ -39,6 +46,7 @@ export const pageQuery = graphql`
     wordpressPost(id: { eq: $id }) {
       id
       featured_media {
+        caption
         localFile {
           childImageSharp {
             fluid {
