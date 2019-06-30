@@ -7,7 +7,7 @@ import PostInfo from '../components/postInfo';
 import './post.css';
 
 export default ({ pageContext, data }) => {
-  const { fluid } = data.wordpressPost.featured_media.localFile.childImageSharp;
+  // const { fluid } = data.wordpressPost.featured_media.localFile.childImageSharp;
   return (
     <Layout pageTitle={pageContext.title}>
       <div style={{ height: '80px', marginBottom: '5%' }}></div>
@@ -20,7 +20,7 @@ export default ({ pageContext, data }) => {
         {
           data.wordpressPost.featured_media ?
           <Img
-          fluid={fluid}
+          fluid={data.wordpressPost.featured_media.localFile.childImageSharp}
           className="post-image"
           /> :
           null
