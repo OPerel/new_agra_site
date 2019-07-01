@@ -1,22 +1,26 @@
 .sidebar {
   display: none;
+  position: -webkit-sticky;
+          position: sticky;
+  top: 20%;
+  z-index: 1;
   margin-right: 35px;
   max-width: 155px;
 }
 
-.sticky {
+/* .sticky {
   display: none;
   position: fixed;
   bottom: 47%;
   margin-right: 35px;
-}
+} */
 
 @media only screen and (min-width: 770px) {
   .sidebar {
     display: block;
   }
 
-  .sticky {
+  /* .sticky {
     display: block;
-  }
+  } */
 }
