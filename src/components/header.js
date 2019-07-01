@@ -11,10 +11,6 @@ import './header.css';
 const Header = ({ pageTitle }) => (
   <>
     <SEO title={pageTitle}/>
-    {/* <Helmet>
-       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" />
-       <link href="https://fonts.googleapis.com/css?family=Rubik:500&display=swap" rel="stylesheet" />
-    </Helmet> */}
     <StaticQuery query={
       graphql`{
         wordpressWpMedia(slug:{eq:"logo"}) {
@@ -56,21 +52,3 @@ Header.defaultProps = {
 }
 
 export default Header
-
-// <ul>
-//   {
-//     edges[0].node.items.map((item, i) => {
-//       return (
-//         <li key={i}>
-//           <Link
-//           key={item.wordpress_id}
-//           to={`/${item.object_slug}`}
-//           activeClassName="active"
-//           >
-//             {item.title}
-//           </Link>
-//         </li>
-//       )
-//     })
-//   }
-// </ul>

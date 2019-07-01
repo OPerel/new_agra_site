@@ -10,7 +10,6 @@ export default ({ pageContext, data }) => {
   const { featured_media } = data.wordpressPost;
   return (
     <Layout pageTitle={pageContext.title}>
-      <div style={{ height: '80px', marginBottom: '5%' }}></div>
       <PageLayout>
         <h1
         className="post-heading"
