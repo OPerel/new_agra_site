@@ -8,19 +8,8 @@
   max-width: 155px;
 }
 
-/* .sticky {
-  display: none;
-  position: fixed;
-  bottom: 47%;
-  margin-right: 35px;
-} */
-
 @media only screen and (min-width: 770px) {
   .sidebar {
     display: block;
   }
-
-  /* .sticky {
-    display: block;
-  } */
 }

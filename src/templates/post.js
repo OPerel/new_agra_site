@@ -11,7 +11,7 @@ export default ({ pageContext, data }) => {
   return (
     <Layout pageTitle={pageContext.title}>
       <div style={{ height: '80px', marginBottom: '5%' }}></div>
-      <PageLayout page="post">
+      <PageLayout>
         <h1
         className="post-heading"
         dangerouslySetInnerHTML={{ __html: pageContext.title }}

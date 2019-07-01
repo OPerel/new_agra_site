@@ -8,7 +8,7 @@ const PageLayout = (props) => (
         {props.children}
       </div>
       <div className="col col-0 col-md-3">
-        <Sidebar page={props.page}/>
+        <Sidebar />
       </div>
     </div>
   </div>
