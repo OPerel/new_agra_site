@@ -9,7 +9,7 @@ const BlogSection = () => (
     backgroundColor: '#f8f9f9',
     padding: '70px 0'
   }}>
-    <h2 style={{ textAlign: 'center' }}>כתבות אחרונות</h2>
+    <h3 style={{ textAlign: 'center' }}>כתבות אחרונות</h3>
     <div className="container">
       <BlogComponent />
       <Link to="/blog" style={{ textDecoration: 'none' }}>

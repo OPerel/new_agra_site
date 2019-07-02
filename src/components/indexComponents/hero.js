@@ -33,7 +33,7 @@ const Hero = () => {
             <BgImg className="hero" fluid={fluid}>
               <div className="hero-content">
                 <animated.h1 style={animateProps}>אגרא יעוץ ותכנון בע"מ</animated.h1>
-                <animated.h4 style={animateProps}>ניהול ותכנון – מתארי, פרוגרמטי, פונקציונלי, הנדסי וסביבתי. עשרות שנות ניסיון ביעוץ ותכנון לתעשייה, לוגיסטיקה, משרדי ממשלה, רשויות ממלכתיות ומקומיות, פרויקטים סביבתיים.</animated.h4>
+                <animated.h2 style={animateProps}>ניהול ותכנון – מתארי, פרוגרמטי, פונקציונלי, הנדסי וסביבתי. עשרות שנות ניסיון ביעוץ ותכנון לתעשייה, לוגיסטיקה, משרדי ממשלה, רשויות ממלכתיות ומקומיות, פרויקטים סביבתיים.</animated.h2>
                 <animated.div style={animateProps} className="btns">
                   <AnchorLink href="#services" offset="90">
                     <Button text="שירותים" />

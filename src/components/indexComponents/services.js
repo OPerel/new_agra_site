@@ -34,7 +34,7 @@ const Services = (props) => {
         const { edges } = data.allWordpressPage;
         return (
           <section style={{ backgroundColor: '#f8f9f9', padding: '70px 0' }}>
-            <h2 id="services" style={{ textAlign: 'center' }}>שירותים</h2>
+            <h3 id="services" style={{ textAlign: 'center' }}>שירותים</h3>
             <div className="services container">
               {
                 edges.map(edge => {
