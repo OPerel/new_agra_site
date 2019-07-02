@@ -10,7 +10,7 @@ import './header.css';
 
 const Header = ({ pageTitle }) => (
   <>
-    <SEO title={pageTitle}/>
+    <SEO title={pageTitle} />
     <StaticQuery query={
       graphql`{
         wordpressWpMedia(slug:{eq:"logo"}) {
@@ -18,7 +18,7 @@ const Header = ({ pageTitle }) => (
           localFile {
             childImageSharp {
               fixed(width: 160, height: 69) {
-                ...GatsbyImageSharpFixed_tracedSVG
+                ...GatsbyImageSharpFixed
               }
             }
           }

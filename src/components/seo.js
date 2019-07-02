@@ -5,12 +5,12 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
-import Helmet from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import React from "react";
+import PropTypes from "prop-types";
+import Helmet from "react-helmet";
+import { useStaticQuery, graphql } from "gatsby";
 
-function SEO({ description, lang, meta, title }) {
+function SEO({ lang, meta, title, description, image }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -18,6 +18,8 @@ function SEO({ description, lang, meta, title }) {
           siteMetadata {
             title
             description
+            url
+            image
             author
           }
         }
@@ -31,26 +33,43 @@ function SEO({ description, lang, meta, title }) {
   return (
     <Helmet
       htmlAttributes={{
-        lang: "he_IL",
+        lang: "he",
       }}
       title={pageTitle}
-      titleTemplate={title ? `${site.siteMetadata.title} | %s` : ''}
+      titleTemplate={title ? `%s | ${site.siteMetadata.title}` : ''}
       meta={[
         {
           name: `description`,
           content: metaDescription,
         },
         {
+          name: `image`,
+          content: site.siteMetadata.image,
+        },
+        {
+          name: `og:url`,
+          property: `og:url`,
+          content: site.siteMetadata.image,
+        },
+        {
+          name: `og:title`,
           property: `og:title`,
           content: pageTitle,
         },
         {
+          name: `og:description`,
           property: `og:description`,
           content: metaDescription,
         },
         {
+          name: `og:type`,
           property: `og:type`,
           content: `website`,
+        },
+        {
+          name: `og:image`,
+          property: `og:image`,
+          content: site.siteMetadata.image,
         },
         {
           name: `author`,
@@ -62,15 +81,19 @@ function SEO({ description, lang, meta, title }) {
 }
 
 SEO.defaultProps = {
-  lang: `en`,
+  lang: `he`,
   meta: [],
-  description: ``,
+  title: null,
+  description: null,
+  image: null,
 }
 
 SEO.propTypes = {
-  description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
+  title: PropTypes.string,
+  description: PropTypes.string,
+  image: PropTypes.string,
 }
 
 export default SEO;
