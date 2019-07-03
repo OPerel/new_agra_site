@@ -18,7 +18,7 @@ class ContactUs extends Component {
       action: props.action,
       formIsValid: false,
       formFields: {
-        fname: {
+        full_name: {
           value: '',
           valid: false,
           touched: false,
@@ -79,9 +79,9 @@ class ContactUs extends Component {
   }
 
   handleSubmit = async e => {
-    const {fname, email, message} = this.state.formFields;
+    const {full_name, email, message} = this.state.formFields;
     const body = {
-      name: fname.value,
+      full_name: full_name.value,
       email: email.value,
       message: message.value
     };
@@ -131,11 +131,11 @@ class ContactUs extends Component {
         />
         <input
         type="text"
-        name="fname"
-        value={this.state.formFields.fname.value}
+        name="full_name"
+        value={this.state.formFields.full_name.value}
         placeholder="שם מלא"
         onChange={this.handleChange}
-        className={this.inputErrorFeedback('fname')}
+        className={this.inputErrorFeedback('full_name')}
         />
         <input
         type="email"

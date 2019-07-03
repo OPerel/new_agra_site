@@ -3,7 +3,7 @@ import { graphql, StaticQuery } from 'gatsby';
 import PostPrev from './postPrev';
 
 const postQuery = graphql`{
-  allWordpressPost {
+  allWordpressPost (sort:{fields:date, order:DESC}) {
     edges {
       node {
         id
