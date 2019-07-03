@@ -18,7 +18,7 @@ function SEO({ lang, meta, title, description, image }) {
           siteMetadata {
             title
             description
-            url
+            siteUrl
             image
             author
           }
@@ -49,7 +49,7 @@ function SEO({ lang, meta, title, description, image }) {
         {
           name: `og:url`,
           property: `og:url`,
-          content: site.siteMetadata.image,
+          content: site.siteMetadata.siteUrl,
         },
         {
           name: `og:title`,

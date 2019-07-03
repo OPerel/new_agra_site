@@ -6,7 +6,7 @@ module.exports = {
   siteMetadata: {
     title: `אגרא יעוץ ותכנון בע"מ`,
     description: `ניהול ותכנון – מתארי, פרוגרמטי, פונקציונלי, הנדסי וסביבתי. עשרות שנות ניסיון ביעוץ ותכנון לתעשייה, לוגיסטיקה, משרדי ממשלה, רשויות ממלכתיות ומקומיות, פרויקטים סביבתיים.`,
-    url: `https://www.agraconsulting.co.il`,
+    siteUrl: `https://www.agraconsulting.co.il`,
     image: `/src/images/social.png`,
     author: `https://github.com/OPerel`,
   },
