@@ -11,7 +11,8 @@
   width: 200px;
   height: 200px;
   background-color: #1f6021;
-  transform: rotate(-15deg);
+  -webkit-transform: rotate(-15deg);
+          transform: rotate(-15deg);
 }
 
 .nf-img-bg .nf-img {
@@ -21,7 +22,8 @@
   width: 200px;
   height: 200px;
   background-color: #a2e49d;
-  transform: rotate(15deg);
+  -webkit-transform: rotate(15deg);
+          transform: rotate(15deg);
 }
 
 .nf-img-bg .nf-img p {
