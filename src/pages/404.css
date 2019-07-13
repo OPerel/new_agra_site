@@ -1,0 +1,33 @@
+.nf-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  width: 60%;
+  margin: 5% auto;
+  padding: 40px 80px;
+  background-color: #e7fde7;
+}
+
+.nf-img-bg {
+  width: 200px;
+  height: 200px;
+  background-color: #1f6021;
+  transform: rotate(-15deg);
+}
+
+.nf-img-bg .nf-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  background-color: #a2e49d;
+  transform: rotate(15deg);
+}
+
+.nf-img-bg .nf-img p {
+  font-size: 2.8rem;
+}
+
+.not-found {
+ align-self: center;
+}
