@@ -68,17 +68,6 @@ module.exports = {
           htaccess_pass: "your-htaccess-password",
           htaccess_sendImmediately: false,
 
-          // If hostingWPCOM is true then you will need to communicate with wordpress.com API
-          // in order to do that you need to create an app (of type Web) at https://developer.wordpress.com/apps/
-          // then add your clientId, clientSecret, username, and password here
-          // Learn about environment variables: https://www.gatsbyjs.org/docs/environment-variables
-          // If two-factor authentication is enabled then you need to create an Application-Specific Password,
-          // see https://en.support.wordpress.com/security/two-step-authentication/#application-specific-passwords
-          wpcom_app_clientSecret: process.env.WORDPRESS_CLIENT_SECRET,
-          wpcom_app_clientId: "54793",
-          wpcom_user: "gatsbyjswpexample@gmail.com",
-          wpcom_pass: process.env.WORDPRESS_PASSWORD,
-
           // If you use "JWT Authentication for WP REST API" (https://wordpress.org/plugins/jwt-authentication-for-wp-rest-api/)
           // or (https://github.com/jonathan-dejong/simple-jwt-authentication) requires jwt_base_path, path can be found in wordpress wp-api.
           // plugin, you can specify user and password to obtain access token and use authenticated requests against wordpress REST API.
