@@ -41,9 +41,16 @@
   .nf-wrapper {
     flex-direction: row;
     justify-content: space-around;
+    text-align: right;
   }
 
   .nf-img-bg {
     margin: 0;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .nf-wrapper {
+    width: 60%;
   }
 }
