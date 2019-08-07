@@ -22,12 +22,12 @@ const Footer = () => (
   } render={data => {
       const { fixed } = data.icon.childImageSharp;
       return (
-        <>
-          <footer className="container-fluid">
+        <footer>
+          <div className="container-fluid">
             <div className="footer-menus container">
               <Menus menuList={footerMenus} />
             </div>
-          </footer>
+          </div>
           <div className="bottom-footer container-fluid">
             <div className="btn-up">
               <button>
@@ -37,10 +37,10 @@ const Footer = () => (
               </button>
             </div>
             <p className="container">
-              Agra Planning and Conculting Ltd &copy; {new Date().getFullYear()} Developed by <a href="https://github.com/OPerel" target="_blank" rel="noopener noreferrer">Ori Perelman</a>
+              Agra Planning and Conculting Ltd &copy; {new Date().getFullYear()} Developed by <a href="https://github.com/OPerel" target="_blank" rel="noopener noreferrer nofollow">Ori Perelman</a>
             </p>
           </div>
-        </>
+        </footer>
       )
     }
   }/>

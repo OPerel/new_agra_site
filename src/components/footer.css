@@ -6,13 +6,27 @@ footer {
 .footer-menus {
   display: -webkit-box;
   display: flex;
+  -webkit-box-direction: normal;
+   -webkit-box-orient: vertical;
+     -ms-flex-direction: column;
+         flex-direction: column;
   -webkit-box-pack: center;
    justify-content: center;
   padding: 50px 0;
 }
 
-.footer-menus h5 {
+.footer-menus .menu h5 {
   color: #ffffff;
+  font-size: 1rem;
+}
+
+.footer-menus .menu ul {
+  display: flex;
+  font-size: 1rem;
+}
+
+.footer-menus .menu ul li {
+  padding: 0 3%;
 }
 
 .bottom-footer {
@@ -53,7 +67,23 @@ footer {
   border-radius: 20px 0 0 0;
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 770px) {
+  .footer-menus {
+    -webkit-box-orient: horizontal;
+     -webkit-box-direction: normal;
+           -ms-flex-direction: row;
+               flex-direction: row;
+  }
+
+  .footer-menus .menu ul {
+    display: block;
+    font-size: 0.9rem;
+  }
+
+  .footer-menus .menu h5 {
+    font-size: 0.9rem;
+  }
+
   .bottom-footer .btn-up button {
     margin: 0;
     right: 60px;

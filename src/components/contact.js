@@ -130,26 +130,32 @@ class ContactUs extends Component {
         value={loc}
         />
         <input
+        id="full_name"
         type="text"
         name="full_name"
         value={this.state.formFields.full_name.value}
         placeholder="שם מלא"
+        aria-label="שם מלא"
         onChange={this.handleChange}
         className={this.inputErrorFeedback('full_name')}
         />
         <input
+        id="email"
         type="email"
         name="email"
         value={this.state.formFields.email.value}
         placeholder="אי-מייל"
+        aria-label="אי-מייל"
         onChange={this.handleChange}
         className={this.inputErrorFeedback('email')}
         />
         <textarea
+        id="message"
         form="con"
         name="message"
         value={this.state.formFields.message.value}
         placeholder="ההודעה שלך"
+        aria-label="ההודעה שלך"
         onChange={this.handleChange}
         className={this.inputErrorFeedback('message')}
         />
