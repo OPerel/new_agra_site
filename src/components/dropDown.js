@@ -8,7 +8,7 @@ import '../images/icons8-menu-filled-50.png';
 const menuham = graphql`{
   icon: file(relativePath:{eq: "icons8-menu-filled-50.png"}) {
     childImageSharp {
-      fixed (width: 45, height: 45) {
+      fixed (width: 25, height: 25) {
         ...GatsbyImageSharpFixed_tracedSVG
       }
     }
@@ -48,8 +48,8 @@ class DropDown extends Component {
               </button>
               {
                 this.state.showMenu
-                ? <div className="dropdown"><Menus menuList={['Main']} /></div>
-                : null
+                  ? <div className="dropdown"><Menus menuList={['Main']} /></div>
+                  : null
               }
             </div>
           );

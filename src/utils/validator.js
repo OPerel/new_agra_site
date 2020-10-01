@@ -16,7 +16,7 @@ const validate = (value, rules) => {
 }
 
 /**
- * Check to confirm that feild is required
+ * Check to confirm that field is required
  *
  * @param  value
  * @return
