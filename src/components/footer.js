@@ -37,7 +37,7 @@ const Footer = () => (
               </button>
             </div>
             <p className="container">
-              Agra Planning and Conculting Ltd &copy; {new Date().getFullYear()} Developed by <a href="https://github.com/OPerel" target="_blank" rel="noopener noreferrer nofollow">Ori Perelman</a>
+              Agra Planning and Conculting Ltd &copy; {new Date().getFullYear()} Developed by <a href="https://www.oriperelman.com" target="_blank" rel="noopener nofollow">Ori Perelman</a>
             </p>
           </div>
         </footer>
