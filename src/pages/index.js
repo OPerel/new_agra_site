@@ -17,3 +17,15 @@ export default () => {
     </Layout>
   )
 }
+
+
+/**
+ * TODO:
+ * 
+ * 1. folder and file structure
+ * 2. convert all images to webp
+ * 3. better styles for dropdown btn and menu
+ * 4. add reveal animations for all landing page's sections
+ * 
+ * 5. MOVE OUT OF WORDPRESS!!
+ */

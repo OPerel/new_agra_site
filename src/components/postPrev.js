@@ -15,8 +15,8 @@ const PostPrev = (props) => {
           </div>
           {
             props.img
-            ? <Img fixed={props.img.localFile.childImageSharp.fixed} className="prev-img" />
-            : null
+              ? <Img fixed={props.img.localFile.childImageSharp.fixed} className="prev-img" />
+              : null
           }
         </div>
       </Link>

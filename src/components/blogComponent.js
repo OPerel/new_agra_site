@@ -37,13 +37,13 @@ const BlogComponent = () => (
         edges.map((edge, i) => {
           return (
             <PostPrev
-            key={edge.node.id}
-            slug={edge.node.slug}
-            author={edge.node.author.name}
-            date={edge.node.date}
-            title={edge.node.title}
-            excerpt={edge.node.excerpt}
-            img={edge.node.featured_media}
+              key={edge.node.id}
+              slug={edge.node.slug}
+              author={edge.node.author.name}
+              date={edge.node.date}
+              title={edge.node.title}
+              excerpt={edge.node.excerpt}
+              img={edge.node.featured_media}
             />
           )
         })

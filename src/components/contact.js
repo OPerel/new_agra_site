@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import validate from './validator';
+import validate from '../utils/validator';
 import Button from '../components/button';
 import './contact.css';
 
@@ -47,11 +47,10 @@ class ContactUs extends Component {
     }
   }
 
-  handleChange = (e) => {
+  handleChange = e => {
     document.getElementById('mSent').classList.add('mSent');
 
-    const name = e.target.name;
-    const value = e.target.value;
+    const { name, value } = e.target;
 
     const updatedForm = {
       ...this.state.formFields
@@ -79,7 +78,7 @@ class ContactUs extends Component {
   }
 
   handleSubmit = async e => {
-    const {full_name, email, message} = this.state.formFields;
+    const { full_name, email, message } = this.state.formFields;
     const body = {
       full_name: full_name.value,
       email: email.value,
@@ -117,52 +116,52 @@ class ContactUs extends Component {
     const { loc } = this.state;
     return (
       <form
-      id="con"
-      name={loc}
-      className="contact"
-      data-netlify="true"
-      netlify-honeypot="bot-field"
-      onSubmit={this.handleSubmit}
+        id="con"
+        name={loc}
+        className="contact"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        onSubmit={this.handleSubmit}
       >
         <input
-        type="hidden"
-        name="form-name"
-        value={loc}
+          type="hidden"
+          name="form-name"
+          value={loc}
         />
         <input
-        id="full_name"
-        type="text"
-        name="full_name"
-        value={this.state.formFields.full_name.value}
-        placeholder="שם מלא"
-        aria-label="שם מלא"
-        onChange={this.handleChange}
-        className={this.inputErrorFeedback('full_name')}
+          id="full_name"
+          type="text"
+          name="full_name"
+          value={this.state.formFields.full_name.value}
+          placeholder="שם מלא"
+          aria-label="שם מלא"
+          onChange={this.handleChange}
+          className={this.inputErrorFeedback('full_name')}
         />
         <input
-        id="email"
-        type="email"
-        name="email"
-        value={this.state.formFields.email.value}
-        placeholder="אי-מייל"
-        aria-label="אי-מייל"
-        onChange={this.handleChange}
-        className={this.inputErrorFeedback('email')}
+          id="email"
+          type="email"
+          name="email"
+          value={this.state.formFields.email.value}
+          placeholder="אי-מייל"
+          aria-label="אי-מייל"
+          onChange={this.handleChange}
+          className={this.inputErrorFeedback('email')}
         />
         <textarea
-        id="message"
-        form="con"
-        name="message"
-        value={this.state.formFields.message.value}
-        placeholder="ההודעה שלך"
-        aria-label="ההודעה שלך"
-        onChange={this.handleChange}
-        className={this.inputErrorFeedback('message')}
+          id="message"
+          form="con"
+          name="message"
+          value={this.state.formFields.message.value}
+          placeholder="ההודעה שלך"
+          aria-label="ההודעה שלך"
+          onChange={this.handleChange}
+          className={this.inputErrorFeedback('message')}
         />
         <Button
-        text="שלח"
-        disabled={!this.state.formIsValid}
-        classN="contact-btn"
+          text="שלח"
+          disabled={!this.state.formIsValid}
+          classN="contact-btn"
         >
           <input type="submit" name="submit" />
         </Button>
