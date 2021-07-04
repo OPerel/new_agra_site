@@ -3,7 +3,7 @@ import Img from 'gatsby-image';
 import './serviceExcerpt.css';
 
 const ServiceExcerpt = ({ page }) => {
-  const { fixed } = page.acf.icon.localFile.childImageSharp;
+  const { fixed } = page.excerptIcon;
   return (
     <div className="service">
       <div>

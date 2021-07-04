@@ -1,25 +1,19 @@
 import React from 'react';
-import { Link, graphql, StaticQuery } from 'gatsby';
+import { Link, graphql, useStaticQuery } from 'gatsby';
 import ServiceExcerpt from '../serviceExcerpt/serviceExcerpt';
-import './services.css'
+import './services.css';
 
-const serviceQuery = graphql`{
-  allWordpressPage (filter:{template:{eq:"services.php"}}) {
+const query = graphql`{
+  allContentfulPage(filter: {excerpt: {ne: null}}) {
     edges {
       node {
         id
         slug
         title
         excerpt
-        acf {
-          icon {
-            localFile {
-              childImageSharp {
-                fixed(width: 120, height: 120) {
-                  ...GatsbyImageSharpFixed_withWebp
-                }
-              }
-            }
+        excerptIcon {
+          fixed(height: 120, width: 120) {
+            ...GatsbyContentfulFixed
           }
         }
       }
@@ -28,31 +22,27 @@ const serviceQuery = graphql`{
 }`
 
 const Services = () => {
+  const excerpts = useStaticQuery(query);
+  console.log(excerpts);
+  const { edges } = excerpts.allContentfulPage;
   return (
-    <StaticQuery query={serviceQuery}
-      render={data => {
-        const { edges } = data.allWordpressPage;
-        return (
-          <section style={{ backgroundColor: '#f8f9f9', padding: '70px 0' }}>
-            <h3 id="services" style={{ textAlign: 'center' }}>שירותים</h3>
-            <div className="services container">
-              {
-                edges.map(edge => {
-                  return (
-                    <Link
-                    key={edge.node.id}
-                    to={`/${edge.node.slug}`}
-                    >
-                      <ServiceExcerpt page={edge.node} />
-                    </Link>
-                  )
-                })
-              }
-            </div>
-          </section>
-        )
-      }}
-    />
+    <section style={{ backgroundColor: '#f8f9f9', padding: '70px 0' }}>
+      <h3 id="services" style={{ textAlign: 'center' }}>שירותים</h3>
+      <div className="services container">
+        {
+          edges.map(edge => {
+            return (
+              <Link
+                key={edge.node.id}
+                to={`/${edge.node.slug}`}
+              >
+                <ServiceExcerpt page={edge.node} />
+              </Link>
+            )
+          })
+        }
+      </div>
+    </section>
   )
 }
 

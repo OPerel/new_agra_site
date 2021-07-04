@@ -15,7 +15,6 @@ const options = {
   renderNode: {
     [BLOCKS.PARAGRAPH]: (node, children) => <p>{children}</p>,
     [BLOCKS.EMBEDDED_ASSET]: node => {
-      console.log(node)
       return (
         <Img {...node.data.target} />
       )
@@ -25,7 +24,6 @@ const options = {
 
 const Page = ({ pageContext, data }) => {
   const img = data.contentfulPage.featuredMedia.fluid;
-  console.log(pageContext)
   return (
     <Layout pageTitle={pageContext.title}>
       <PageHeader imgFile={img} title={pageContext.title} />
@@ -33,10 +31,9 @@ const Page = ({ pageContext, data }) => {
         {
           pageContext.acf
           ? <div>
-            test
               <p
                 style={{ fontWeight: '500' }}
-                dangerouslySetInnerHTML={{ __html: pageContext.acf.motto }}
+                dangerouslySetInnerHTML={{ __html: pageContext.acf.Motto }}
               />
               <p
                 style={{
