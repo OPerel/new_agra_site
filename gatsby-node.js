@@ -42,18 +42,31 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
-      allWordpressPost {
+      allContentfulPost {
         edges {
           node {
-            id
-            slug
             title
-            content
-            date
+            slug
             excerpt
-            author {
-              slug
-              name
+            date
+            id
+            content {
+              raw
+              references {
+                __typename
+                contentful_id
+                fixed(width: 400, height: 200) {
+                  src
+                  srcSet
+                  width
+                  tracedSVG
+                  srcWebp
+                  srcSetWebp
+                  height
+                  base64
+                  aspectRatio
+                }
+              }
             }
           }
         }
@@ -67,7 +80,7 @@ exports.createPages = async ({ graphql, actions }) => {
   }
 
   // Access query results via object destructuring
-  const { allContentfulPage, allWordpressPost } = result.data
+  const { allContentfulPage, allContentfulPost } = result.data
 
   // Create Page pages.
   const pageTemplate = path.resolve("src/templates/page.js")
@@ -85,7 +98,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const postTemplate = path.resolve("src/templates/post.js")
   // The Post ID is prefixed with 'POST_'
-  allWordpressPost.edges.forEach(edge => {
+  allContentfulPost.edges.forEach(edge => {
     createPage({
       path: `/post/${edge.node.slug}`,
       component: slash(postTemplate),

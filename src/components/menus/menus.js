@@ -14,10 +14,18 @@ const queryMenus = graphql`{
       node {
         name
         items {
-          title
-          slug
-          id
-          __typename
+          ... on ContentfulPage {
+            title
+            slug
+            id
+            __typename
+          }
+          ... on ContentfulPost {
+            title
+            slug
+            id
+            __typename
+          }
         }
       }
     }

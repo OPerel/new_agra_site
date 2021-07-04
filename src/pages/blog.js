@@ -5,7 +5,7 @@ import PageLayout from '../components/pageLayout/pageLayout';
 import PageHeader from '../components/pageHeader/pageHeader';
 import BlogComponent from '../components/blogComponent';
 
-export default ({ data }) => {
+const Blog = ({ data }) => {
   const { fluid } = data.wordpressPage.featured_media.localFile.childImageSharp;
   return (
     <Layout pageTitle={data.wordpressPage.title}>
@@ -32,3 +32,5 @@ export const pageQuery = graphql`{
       }
     }
   }`
+
+export default Blog;

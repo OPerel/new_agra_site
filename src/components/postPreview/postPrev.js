@@ -15,12 +15,12 @@ const PostPrev = (props) => {
           </div>
           {
             props.img
-              ? <Img fixed={props.img.localFile.childImageSharp.fixed} className="prev-img" />
+              ? <Img fixed={props.img} className="prev-img" />
               : null
           }
         </div>
       </Link>
-      <PostInfo author={props.author} date={props.date} />
+      <PostInfo date={props.date} />
     </div>
   )
 }

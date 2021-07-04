@@ -4,23 +4,10 @@ import Layout from "../components/layout/layout";
 import PageLayout from '../components/pageLayout/pageLayout';
 import PageHeader from '../components/pageHeader/pageHeader';
 import ContactUs from '../components/contact/contact';
-import Img from 'gatsby-image';
-import { BLOCKS } from "@contentful/rich-text-types"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
+import getRenderOptions from "../utils/renderOptions"
 
-const options = {
-  // renderMark: {
-  //   [MARKS.BOLD]: text => <Bold>{text}</Bold>,
-  // },
-  renderNode: {
-    [BLOCKS.PARAGRAPH]: (node, children) => <p>{children}</p>,
-    [BLOCKS.EMBEDDED_ASSET]: node => {
-      return (
-        <Img {...node.data.target} />
-      )
-    }
-  }
-}
+const options = getRenderOptions();
 
 const Page = ({ pageContext, data }) => {
   const img = data.contentfulPage.featuredMedia.fluid;
@@ -56,8 +43,6 @@ const Page = ({ pageContext, data }) => {
   )
 }
 
-export default Page;
-
 export const pageQuery = graphql`
   query PageByID($id: String!) {
     contentfulPage(id: { eq: $id }) {
@@ -69,3 +54,5 @@ export const pageQuery = graphql`
       }
     }
   }`
+
+export default Page;

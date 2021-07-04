@@ -6,7 +6,7 @@ import Clients from '../components/indexComponents/clients/clients';
 import BlogSection from '../components/indexComponents/blogSection/blogSection';
 import ContactSection from '../components/indexComponents/contactSection/contactSection';
 
-export default () => {
+const Index = () => {
   return (
     <Layout>
       <Hero />
@@ -18,7 +18,7 @@ export default () => {
   )
 }
 
-
+export default Index;
 /**
  * TODO:
  * 
