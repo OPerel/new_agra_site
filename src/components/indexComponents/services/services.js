@@ -23,7 +23,6 @@ const query = graphql`{
 
 const Services = () => {
   const excerpts = useStaticQuery(query);
-  console.log(excerpts);
   const { edges } = excerpts.allContentfulPage;
   return (
     <section style={{ backgroundColor: '#f8f9f9', padding: '70px 0' }}>

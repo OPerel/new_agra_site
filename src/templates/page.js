@@ -31,7 +31,7 @@ const Page = ({ pageContext, data }) => {
         {
           pageContext.acf
           ? <div>
-              <p
+              <q
                 style={{ fontWeight: '500' }}
                 dangerouslySetInnerHTML={{ __html: pageContext.acf.Motto }}
               />
@@ -40,7 +40,7 @@ const Page = ({ pageContext, data }) => {
                   fontStyle: 'italic',
                   textAlign: 'left'
                 }}
-                dangerouslySetInnerHTML={{ __html: pageContext.acf.quote_author }}
+                dangerouslySetInnerHTML={{ __html: pageContext.acf.QuoteAuthor }}
               />
             </div>
           : null

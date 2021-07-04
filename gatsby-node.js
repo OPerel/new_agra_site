@@ -37,6 +37,7 @@ exports.createPages = async ({ graphql, actions }) => {
             }
             acf {
               Motto
+              QuoteAuthor
             }
           }
         }
