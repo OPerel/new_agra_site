@@ -2,11 +2,11 @@ import React from "react"
 import { Link } from 'gatsby';
 import './404.css';
 import Layout from "../components/layout/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 
 const NotFoundPage = () => (
   <Layout>
-    <SEO title="404: Not found" />
+    <Seo title="404: Not found" />
     <div className="nf-wrapper">
       <div className="nf-img-bg"><div className="nf-img"><p>404</p></div></div>
       <div className="not-found">
