@@ -2,8 +2,6 @@
 //  * See: https://www.gatsbyjs.org/docs/node-apis/
 //  */
 
-// from gatsby-source-wordpress:
-
 const path = require(`path`)
 const slash = require(`slash`)
 
@@ -12,34 +10,60 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const result = await graphql(`
     {
-      allWordpressPage(filter:{slug:{nin:"blog"}}) {
+      allContentfulPage(filter:{slug:{nin:"blog"}}) {
         edges {
           node {
             id
-            slug
-            template
             title
-            content
-            excerpt
+            slug
+            content {
+              raw
+              references {
+                __typename
+                contentful_id
+                fluid {
+                  srcWebp
+                  srcSetWebp
+                  base64
+                  aspectRatio
+                  src
+                  srcSet
+                  sizes
+                }
+                title
+              }
+            }
             acf {
-              quote_author
-              motto
+              Motto
+              QuoteAuthor
             }
           }
         }
       }
-      allWordpressPost {
+      allContentfulPost {
         edges {
           node {
-            id
-            slug
             title
-            content
-            date
+            slug
             excerpt
-            author {
-              slug
-              name
+            date
+            id
+            content {
+              raw
+              references {
+                __typename
+                contentful_id
+                fixed(width: 400, height: 200) {
+                  src
+                  srcSet
+                  width
+                  srcWebp
+                  srcSetWebp
+                  height
+                  base64
+                  aspectRatio
+                }
+              }
             }
           }
         }
@@ -53,15 +77,11 @@ exports.createPages = async ({ graphql, actions }) => {
   }
 
   // Access query results via object destructuring
-  const { allWordpressPage, allWordpressPost } = result.data
+  const { allContentfulPage, allContentfulPost } = result.data
 
   // Create Page pages.
   const pageTemplate = path.resolve("src/templates/page.js")
-  // We want to create a detailed page for each page node.
-  // The path field contains the relative original WordPress link
-  // and we use it for the slug to preserve url structure.
-  // The Page ID is prefixed with 'PAGE_'
-  allWordpressPage.edges.forEach(edge => {
+  allContentfulPage.edges.forEach(edge => {
     createPage({
       path: `/${edge.node.slug}`,
       component: slash(pageTemplate),
@@ -71,7 +91,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const postTemplate = path.resolve("src/templates/post.js")
   // The Post ID is prefixed with 'POST_'
-  allWordpressPost.edges.forEach(edge => {
+  allContentfulPost.edges.forEach(edge => {
     createPage({
       path: `/post/${edge.node.slug}`,
       component: slash(postTemplate),

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Menus from './menus';
+import Menus from '../menus/menus';
 import { graphql, StaticQuery } from 'gatsby';
 import './dropDown.css';
 import Img from 'gatsby-image';
-import '../images/icons8-menu-filled-50.png';
+import '../../images/icons8-menu-filled-50.png';
 
 const menuham = graphql`{
   icon: file(relativePath:{eq: "icons8-menu-filled-50.png"}) {

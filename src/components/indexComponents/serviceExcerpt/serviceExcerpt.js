@@ -3,12 +3,12 @@ import Img from 'gatsby-image';
 import './serviceExcerpt.css';
 
 const ServiceExcerpt = ({ page }) => {
-  const { fixed } = page.acf.icon.localFile.childImageSharp;
+  const { fixed } = page.excerptIcon;
   return (
     <div className="service">
       <div>
-        <h4 dangerouslySetInnerHTML={{ __html: page.title }}></h4>
-        <p dangerouslySetInnerHTML={{ __html: page.excerpt }}></p>
+        <h4 dangerouslySetInnerHTML={{ __html: page.title }} />
+        <p dangerouslySetInnerHTML={{ __html: page.excerpt }} />
       </div>
       <Img fixed={fixed}/>
     </div>

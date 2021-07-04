@@ -6,7 +6,7 @@ const PageHeader = (props) => (
   <>
     <BgImg fluid={props.imgFile} className="header-bg">
       <div className="container">
-        <h1 dangerouslySetInnerHTML={{ __html: props.title }}></h1>
+        <h1 dangerouslySetInnerHTML={{ __html: props.title }} />
       </div>
     </BgImg>
   </>

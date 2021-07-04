@@ -1,15 +1,15 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Layout from '../components/layout';
-import PageLayout from '../components/pageLayout';
-import PageHeader from '../components/pageHeader';
+import Layout from '../components/layout/layout';
+import PageLayout from '../components/pageLayout/pageLayout';
+import PageHeader from '../components/pageHeader/pageHeader';
 import BlogComponent from '../components/blogComponent';
 
-export default ({ data }) => {
-  const { fluid } = data.wordpressPage.featured_media.localFile.childImageSharp;
+const Blog = ({ data }) => {
+  const { fluid } = data.contentfulPage.featuredMedia;
   return (
-    <Layout pageTitle={data.wordpressPage.title}>
-      <PageHeader imgFile={fluid} title={data.wordpressPage.title} />
+    <Layout pageTitle={data.contentfulPage.title}>
+      <PageHeader imgFile={fluid} title={data.contentfulPage.title} />
       <PageLayout>
         <BlogComponent />
       </PageLayout>
@@ -18,17 +18,15 @@ export default ({ data }) => {
 }
 
 export const pageQuery = graphql`{
-    wordpressPage(slug: { eq: "blog" }) {
+    contentfulPage(slug: { eq: "blog" }) {
       id
       title
-      featured_media {
-        localFile {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
-          }
+      featuredMedia {
+        fluid {
+          ...GatsbyContentfulFluid
         }
       }
     }
   }`
+
+export default Blog;

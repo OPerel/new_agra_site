@@ -1,9 +1,9 @@
 import React from 'react';
-import { graphql, StaticQuery } from 'gatsby';
-import PostPrev from './postPrev';
+import { graphql, useStaticQuery } from 'gatsby';
+import PostPrev from './postPreview/postPrev';
 
 const postQuery = graphql`{
-  allWordpressPost (sort:{fields:date, order:DESC}) {
+  allContentfulPost (sort:{fields:date, order:DESC}) {
     edges {
       node {
         id
@@ -11,16 +11,9 @@ const postQuery = graphql`{
         title
         date
         excerpt
-        author {
-          name
-        }
-        featured_media {
-          localFile {
-            childImageSharp {
-              fixed(width: 200, height: 100) {
-                ...GatsbyImageSharpFixed_withWebp
-              }
-            }
+        featuredMedia {
+          fixed(width: 200, height: 100) {
+            ...GatsbyContentfulFixed
           }
         }
       }
@@ -28,28 +21,23 @@ const postQuery = graphql`{
   }
 }`
 
-const BlogComponent = () => (
-  <StaticQuery
-    query={postQuery}
-    render={data => {
-      const { edges }  = data.allWordpressPost;
+const BlogComponent = () => {
+  const data = useStaticQuery(postQuery);
+  const { edges }  = data.allContentfulPost;
+  return (
+    edges.map((edge) => {
       return (
-        edges.map((edge, i) => {
-          return (
-            <PostPrev
-              key={edge.node.id}
-              slug={edge.node.slug}
-              author={edge.node.author.name}
-              date={edge.node.date}
-              title={edge.node.title}
-              excerpt={edge.node.excerpt}
-              img={edge.node.featured_media}
-            />
-          )
-        })
+        <PostPrev
+          key={edge.node.id}
+          slug={edge.node.slug}
+          date={edge.node.date}
+          title={edge.node.title}
+          excerpt={edge.node.excerpt}
+          img={edge.node.featuredMedia.fixed}
+        />
       )
-    }}
-  />
-)
+    })
+  )
+}
 
 export default BlogComponent;
