@@ -6,10 +6,10 @@ import PageHeader from '../components/pageHeader/pageHeader';
 import BlogComponent from '../components/blogComponent';
 
 const Blog = ({ data }) => {
-  const { fluid } = data.wordpressPage.featured_media.localFile.childImageSharp;
+  const { fluid } = data.contentfulPage.featuredMedia;
   return (
-    <Layout pageTitle={data.wordpressPage.title}>
-      <PageHeader imgFile={fluid} title={data.wordpressPage.title} />
+    <Layout pageTitle={data.contentfulPage.title}>
+      <PageHeader imgFile={fluid} title={data.contentfulPage.title} />
       <PageLayout>
         <BlogComponent />
       </PageLayout>
@@ -18,16 +18,12 @@ const Blog = ({ data }) => {
 }
 
 export const pageQuery = graphql`{
-    wordpressPage(slug: { eq: "blog" }) {
+    contentfulPage(slug: { eq: "blog" }) {
       id
       title
-      featured_media {
-        localFile {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
-          }
+      featuredMedia {
+        fluid {
+          ...GatsbyContentfulFluid
         }
       }
     }

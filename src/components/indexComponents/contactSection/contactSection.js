@@ -1,27 +1,31 @@
 import React from 'react';
-import { graphql, StaticQuery } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 import ContactUs from '../../contact/contact';
 import './contactSection.css';
+import { renderRichText } from "gatsby-source-contentful/rich-text"
+import getRenderOptions from "../../../utils/renderOptions"
 
-const ContactSection = () => (
-  <StaticQuery
-    query={graphql`{
-      wordpressPage(slug: { eq: "contact" }) {
-        content
-      }
-    }`}
-    render={data => {
-      return(
-        <section style={{ padding: '70px 0' }}>
-          <h3 id="contact" style={{ textAlign: 'center' }}>צור קשר</h3>
-          <div className="contact-section container">
-            <ContactUs loc="homePage" action="/" />
-            <div dangerouslySetInnerHTML={{ __html: data.wordpressPage.content }} />
-          </div>
-        </section>
-      )
-    }}
-  />
-)
+const query = graphql`{
+  contentfulPage(slug: {eq: "contact"}) {
+    content {
+      raw
+    }
+  }
+}`;
+
+const options = getRenderOptions();
+
+const ContactSection = () => {
+  const data = useStaticQuery(query);
+  return(
+    <section style={{ padding: '70px 0' }}>
+      <h3 id="contact" style={{ textAlign: 'center' }}>צור קשר</h3>
+      <div className="contact-section container">
+        <ContactUs loc="homePage" action="/" />
+        {renderRichText(data.contentfulPage.content, options)}
+      </div>
+    </section>
+  )
+}
 
 export default ContactSection;

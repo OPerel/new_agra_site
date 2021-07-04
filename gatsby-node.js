@@ -2,8 +2,6 @@
 //  * See: https://www.gatsbyjs.org/docs/node-apis/
 //  */
 
-// from gatsby-source-wordpress:
-
 const path = require(`path`)
 const slash = require(`slash`)
 
@@ -59,7 +57,6 @@ exports.createPages = async ({ graphql, actions }) => {
                   src
                   srcSet
                   width
-                  tracedSVG
                   srcWebp
                   srcSetWebp
                   height
@@ -84,10 +81,6 @@ exports.createPages = async ({ graphql, actions }) => {
 
   // Create Page pages.
   const pageTemplate = path.resolve("src/templates/page.js")
-  // We want to create a detailed page for each page node.
-  // The path field contains the relative original WordPress link
-  // and we use it for the slug to preserve url structure.
-  // The Page ID is prefixed with 'PAGE_'
   allContentfulPage.edges.forEach(edge => {
     createPage({
       path: `/${edge.node.slug}`,
