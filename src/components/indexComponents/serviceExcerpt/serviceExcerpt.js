@@ -7,8 +7,8 @@ const ServiceExcerpt = ({ page }) => {
   return (
     <div className="service">
       <div>
-        <h4 dangerouslySetInnerHTML={{ __html: page.title }}></h4>
-        <p dangerouslySetInnerHTML={{ __html: page.excerpt }}></p>
+        <h4 dangerouslySetInnerHTML={{ __html: page.title }} />
+        <p dangerouslySetInnerHTML={{ __html: page.excerpt }} />
       </div>
       <Img fixed={fixed}/>
     </div>

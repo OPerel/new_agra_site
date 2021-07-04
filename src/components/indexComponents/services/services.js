@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, graphql, StaticQuery } from 'gatsby';
-import ServiceExcerpt from './serviceExcerpt';
+import ServiceExcerpt from '../serviceExcerpt/serviceExcerpt';
 import './services.css'
 
 const serviceQuery = graphql`{
@@ -27,7 +27,7 @@ const serviceQuery = graphql`{
   }
 }`
 
-const Services = (props) => {
+const Services = () => {
   return (
     <StaticQuery query={serviceQuery}
       render={data => {

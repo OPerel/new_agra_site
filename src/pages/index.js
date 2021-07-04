@@ -1,10 +1,10 @@
 import React from 'react';
-import Layout from '../components/layout';
-import Hero from '../components/indexComponents/hero';
-import Services from '../components/indexComponents/services';
-import Clients from '../components/indexComponents/clients';
-import BlogSection from '../components/indexComponents/blogSection';
-import ContactSection from '../components/indexComponents/contactSection';
+import Layout from '../components/layout/layout';
+import Hero from '../components/indexComponents/hero/hero';
+import Services from '../components/indexComponents/services/services';
+import Clients from '../components/indexComponents/clients/clients';
+import BlogSection from '../components/indexComponents/blogSection/blogSection';
+import ContactSection from '../components/indexComponents/contactSection/contactSection';
 
 export default () => {
   return (
@@ -22,7 +22,6 @@ export default () => {
 /**
  * TODO:
  * 
- * 1. folder and file structure
  * 2. convert all images to webp
  * 3. better styles for dropdown btn and menu
  * 4. add reveal animations for all landing page's sections

@@ -1,5 +1,5 @@
 import React from 'react';
-import Menus from './menus';
+import Menus from '../menus/menus';
 import './sidebar.css';
 
 const sidebarMenus = ['שירותים', 'כתבות אחרונות'];

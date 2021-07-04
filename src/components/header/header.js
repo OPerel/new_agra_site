@@ -2,9 +2,9 @@ import React from "react";
 import { StaticQuery, graphql, Link } from "gatsby";
 import PropTypes from "prop-types";
 // import Helmet from "react-helmet";
-import Menus from './menus';
-import DropDown from './dropDown';
-import SEO from './seo';
+import Menus from '../menus/menus';
+import DropDown from '../dropDown/dropDown';
+import SEO from '../seo';
 import Img from 'gatsby-image';
 import './header.css';
 

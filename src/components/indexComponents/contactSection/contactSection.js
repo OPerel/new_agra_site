@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql, StaticQuery } from 'gatsby';
-import ContactUs from '../contact';
+import ContactUs from '../../contact/contact';
 import './contactSection.css';
 
 const ContactSection = () => (
@@ -16,7 +16,7 @@ const ContactSection = () => (
           <h3 id="contact" style={{ textAlign: 'center' }}>צור קשר</h3>
           <div className="contact-section container">
             <ContactUs loc="homePage" action="/" />
-            <div dangerouslySetInnerHTML={{ __html: data.wordpressPage.content }}></div>
+            <div dangerouslySetInnerHTML={{ __html: data.wordpressPage.content }} />
           </div>
         </section>
       )

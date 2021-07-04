@@ -1,8 +1,8 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Layout from '../components/layout';
-import PageLayout from '../components/pageLayout';
-import PageHeader from '../components/pageHeader';
+import Layout from '../components/layout/layout';
+import PageLayout from '../components/pageLayout/pageLayout';
+import PageHeader from '../components/pageHeader/pageHeader';
 import BlogComponent from '../components/blogComponent';
 
 export default ({ data }) => {

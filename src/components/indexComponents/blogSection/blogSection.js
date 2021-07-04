@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import BlogComponent from '../blogComponent';
-import Button from '../button';
+import BlogComponent from '../../blogComponent';
+import Button from '../../button/button';
 import './blogSection.css';
 
 const BlogSection = () => (

@@ -3,7 +3,7 @@ import { graphql, StaticQuery } from 'gatsby';
 import BgImg from 'gatsby-background-image';
 import { animated, useSpring, config } from 'react-spring';
 import AnchorLink from 'react-anchor-link-smooth-scroll'
-import Button from '../button';
+import Button from '../../button/button';
 import './hero.css';
 
 const Hero = () => {

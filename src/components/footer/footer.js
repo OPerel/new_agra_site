@@ -2,9 +2,9 @@ import React from 'react';
 import { graphql, StaticQuery} from 'gatsby';
 import Img from 'gatsby-image';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
-import Menus from './menus';
+import Menus from '../menus/menus';
 import './footer.css';
-import '../images/icons8-double-up-32.png';
+import '../../images/icons8-double-up-32.png';
 
 const footerMenus = ['אתר אגרא', 'שירותים', 'כתבות אחרונות'];
 

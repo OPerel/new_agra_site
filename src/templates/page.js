@@ -1,9 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Layout from "../components/layout";
-import PageLayout from '../components/pageLayout';
-import PageHeader from '../components/pageHeader';
-import ContactUs from '../components/contact';
+import Layout from "../components/layout/layout";
+import PageLayout from '../components/pageLayout/pageLayout';
+import PageHeader from '../components/pageHeader/pageHeader';
+import ContactUs from '../components/contact/contact';
 import Img from 'gatsby-image';
 import { BLOCKS } from "@contentful/rich-text-types"
 import { renderRichText } from "gatsby-source-contentful/rich-text"

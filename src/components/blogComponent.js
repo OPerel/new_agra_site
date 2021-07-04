@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql, StaticQuery } from 'gatsby';
-import PostPrev from './postPrev';
+import PostPrev from './postPreview/postPrev';
 
 const postQuery = graphql`{
   allWordpressPost (sort:{fields:date, order:DESC}) {
@@ -34,7 +34,7 @@ const BlogComponent = () => (
     render={data => {
       const { edges }  = data.allWordpressPost;
       return (
-        edges.map((edge, i) => {
+        edges.map((edge) => {
           return (
             <PostPrev
               key={edge.node.id}
