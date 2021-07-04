@@ -22,7 +22,9 @@ const ContactSection = () => {
       <h3 id="contact" style={{ textAlign: 'center' }}>צור קשר</h3>
       <div className="contact-section container">
         <ContactUs loc="homePage" action="/" />
-        {renderRichText(data.contentfulPage.content, options)}
+        <div>
+          {renderRichText(data.contentfulPage.content, options)}
+        </div>
       </div>
     </section>
   )
