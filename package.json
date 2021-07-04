@@ -18,7 +18,6 @@
     "gatsby-plugin-sharp": "^3.8.0",
     "gatsby-source-contentful": "^5.8.0",
     "gatsby-source-filesystem": "^3.8.0",
-    "gatsby-source-wordpress": "^3.3.17",
     "gatsby-transformer-sharp": "^3.8.0",
     "intersection-observer": "^0.7.0",
     "prop-types": "^15.7.2",
