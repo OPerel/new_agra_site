@@ -32,7 +32,9 @@ const Page = ({ pageContext, data }) => {
             </div>
           : null
         }
-        {renderRichText(pageContext.content, options)}
+        <div style={{ marginRight: '10px' }}>
+          {renderRichText(pageContext.content, options)}
+        </div>
         {
           pageContext.slug === 'contact'
           ? <ContactUs loc="contactPage" action="/contact" />

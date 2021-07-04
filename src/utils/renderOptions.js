@@ -10,7 +10,8 @@ const getRenderOptions = () => ({
       <a href={link.data.uri} target="_blank" rel="noopener noreferrer">
         {link.content[0].value}
       </a>
-    )
+    ),
+    [BLOCKS.LIST_ITEM]: item => <li>{item.content[0].content[0].value}</li>
   }
 });
 
