@@ -4,9 +4,28 @@ import Layout from "../components/layout";
 import PageLayout from '../components/pageLayout';
 import PageHeader from '../components/pageHeader';
 import ContactUs from '../components/contact';
+import Img from 'gatsby-image';
+import { BLOCKS } from "@contentful/rich-text-types"
+import { renderRichText } from "gatsby-source-contentful/rich-text"
 
-export default ({ pageContext, data }) => {
-  const img = data.wordpressPage.featured_media.localFile.childImageSharp.fluid;
+const options = {
+  // renderMark: {
+  //   [MARKS.BOLD]: text => <Bold>{text}</Bold>,
+  // },
+  renderNode: {
+    [BLOCKS.PARAGRAPH]: (node, children) => <p>{children}</p>,
+    [BLOCKS.EMBEDDED_ASSET]: node => {
+      console.log(node)
+      return (
+        <Img {...node.data.target} />
+      )
+    }
+  }
+}
+
+const Page = ({ pageContext, data }) => {
+  const img = data.contentfulPage.featuredMedia.fluid;
+  console.log(pageContext)
   return (
     <Layout pageTitle={pageContext.title}>
       <PageHeader imgFile={img} title={pageContext.title} />
@@ -14,24 +33,22 @@ export default ({ pageContext, data }) => {
         {
           pageContext.acf
           ? <div>
+            test
               <p
-              style={{ fontWeight: '500' }}
-              dangerouslySetInnerHTML={{ __html: pageContext.acf.motto }}
-              ></p>
+                style={{ fontWeight: '500' }}
+                dangerouslySetInnerHTML={{ __html: pageContext.acf.motto }}
+              />
               <p
-              style=
-                {{ fontStyle: 'italic',
-                textAlign: 'left'
-              }}
-              dangerouslySetInnerHTML={{ __html: pageContext.acf.quote_author }}
-              ></p>
+                style={{
+                  fontStyle: 'italic',
+                  textAlign: 'left'
+                }}
+                dangerouslySetInnerHTML={{ __html: pageContext.acf.quote_author }}
+              />
             </div>
           : null
         }
-        <div
-        style={{ marginRight: '10px'}}
-        dangerouslySetInnerHTML={{ __html: pageContext.content }}
-        ></div>
+        {renderRichText(pageContext.content, options)}
         {
           pageContext.slug === 'contact'
           ? <ContactUs loc="contactPage" action="/contact" />
@@ -42,17 +59,15 @@ export default ({ pageContext, data }) => {
   )
 }
 
+export default Page;
+
 export const pageQuery = graphql`
   query PageByID($id: String!) {
-    wordpressPage(id: { eq: $id }) {
+    contentfulPage(id: { eq: $id }) {
       id
-      featured_media {
-        localFile {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
-          }
+      featuredMedia {
+        fluid {
+          ...GatsbyContentfulFluid
         }
       }
     }

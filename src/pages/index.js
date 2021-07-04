@@ -26,6 +26,8 @@ export default () => {
  * 2. convert all images to webp
  * 3. better styles for dropdown btn and menu
  * 4. add reveal animations for all landing page's sections
+ * 5. ServiceExcerpt mobile img size
+ * 6. typescript (?)
  * 
- * 5. MOVE OUT OF WORDPRESS!!
+ * MOVE OUT OF WORDPRESS!!
  */

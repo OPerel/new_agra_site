@@ -12,18 +12,31 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const result = await graphql(`
     {
-      allWordpressPage(filter:{slug:{nin:"blog"}}) {
+      allContentfulPage(filter:{slug:{nin:"blog"}}) {
         edges {
           node {
             id
-            slug
-            template
             title
-            content
-            excerpt
+            slug
+            content {
+              raw
+              references {
+                __typename
+                contentful_id
+                fluid {
+                  srcWebp
+                  srcSetWebp
+                  base64
+                  aspectRatio
+                  src
+                  srcSet
+                  sizes
+                }
+                title
+              }
+            }
             acf {
-              quote_author
-              motto
+              Motto
             }
           }
         }
@@ -53,7 +66,7 @@ exports.createPages = async ({ graphql, actions }) => {
   }
 
   // Access query results via object destructuring
-  const { allWordpressPage, allWordpressPost } = result.data
+  const { allContentfulPage, allWordpressPost } = result.data
 
   // Create Page pages.
   const pageTemplate = path.resolve("src/templates/page.js")
@@ -61,7 +74,7 @@ exports.createPages = async ({ graphql, actions }) => {
   // The path field contains the relative original WordPress link
   // and we use it for the slug to preserve url structure.
   // The Page ID is prefixed with 'PAGE_'
-  allWordpressPage.edges.forEach(edge => {
+  allContentfulPage.edges.forEach(edge => {
     createPage({
       path: `/${edge.node.slug}`,
       component: slash(pageTemplate),
