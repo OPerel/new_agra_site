@@ -4,7 +4,7 @@ import { animated, useSpring, config } from 'react-spring';
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import Button from '../../button/button';
 import { convertToBgImage } from "gbimage-bridge";
-import { getImage, GatsbyImage } from "gatsby-plugin-image";
+import { getImage } from "gatsby-plugin-image";
 import BackgroundImage from 'gatsby-background-image';
 import './hero.css';
 

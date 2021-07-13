@@ -1,6 +1,5 @@
 import React from 'react';
 import { graphql, StaticQuery} from 'gatsby';
-import Img from 'gatsby-image';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import Menus from '../menus/menus';
 import './footer.css';

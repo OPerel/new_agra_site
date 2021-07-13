@@ -2,7 +2,6 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from "../components/layout/layout";
 import PageLayout from '../components/pageLayout/pageLayout';
-import Img from 'gatsby-image';
 import PostInfo from '../components/postInfo';
 import './post.css';
 import { renderRichText } from "gatsby-source-contentful/rich-text";
