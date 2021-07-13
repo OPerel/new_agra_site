@@ -4,7 +4,6 @@ import './serviceExcerpt.css';
 
 const ServiceExcerpt = ({ page }) => {
   const icon = getImage(page.excerptIcon);
-  console.log('icon: ', icon)
   return (
     <div className="service">
       <div>
