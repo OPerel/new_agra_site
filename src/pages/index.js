@@ -26,7 +26,6 @@ export default Index;
  * 4. add reveal animations for all landing page's sections
  * 5. i18n
  * 6. tests
- * 7. ServiceExcerpt mobile img size
  * 8. typescript (?)
  *
  */
