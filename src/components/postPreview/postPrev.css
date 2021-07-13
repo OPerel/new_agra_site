@@ -9,6 +9,11 @@
   opacity: 0.8;
 }
 
+.prev-img {
+  width: 200px;
+  height: 100px;
+}
+
 .prev-body .prev-img {
   grid-row: 1;
 }

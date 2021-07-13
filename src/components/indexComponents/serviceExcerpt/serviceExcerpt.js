@@ -10,7 +10,7 @@ const ServiceExcerpt = ({ page }) => {
         <h4 dangerouslySetInnerHTML={{ __html: page.title }} />
         <p dangerouslySetInnerHTML={{ __html: page.excerpt }} />
       </div>
-      <GatsbyImage image={icon} alt={`${page.title} excerpt icon`} />
+      <GatsbyImage image={icon} alt={`${page.title} excerpt icon`} className="service-img" />
     </div>
   )
 }
