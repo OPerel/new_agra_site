@@ -8,9 +8,18 @@ const getRenderOptions = () => ({
     [BLOCKS.EMBEDDED_ASSET]: node => (
       <GatsbyImage image={getImage(node.data.target)} alt={node.data.target.title} />
     ),
-    [INLINES.HYPERLINK]: link => (
-      <a href={link.data.uri} target="_blank" rel="noopener noreferrer">
-        {link.content[0].value}
+    [INLINES.HYPERLINK]: (node, children) => (
+      <a href={node.data.uri} target="_blank" rel="noopener noreferrer">
+        {children}
+      </a>
+    ),
+    [INLINES.ASSET_HYPERLINK]: (node, children) => (
+      <a
+        href={node.data.target.file.url}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {children}
       </a>
     ),
     [BLOCKS.LIST_ITEM]: item => <li>{item.content[0].content[0].value}</li>

@@ -20,6 +20,9 @@ exports.createPages = async ({ graphql, actions }) => {
               raw
               references {
                 __typename
+                file {
+                  url
+                }
                 contentful_id
                 gatsbyImageData (
                   layout: CONSTRAINED
@@ -48,6 +51,9 @@ exports.createPages = async ({ graphql, actions }) => {
               raw
               references {
                 __typename
+                file {
+                  url
+                }
                 contentful_id
                 gatsbyImageData (
                   layout: CONSTRAINED
