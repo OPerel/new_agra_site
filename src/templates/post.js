@@ -6,12 +6,14 @@ import Img from 'gatsby-image';
 import PostInfo from '../components/postInfo';
 import './post.css';
 import { renderRichText } from "gatsby-source-contentful/rich-text";
-import getRenderOptions from "../utils/renderOptions"
+import getRenderOptions from "../utils/renderOptions";
+import { getImage, GatsbyImage } from "gatsby-plugin-image"
 
 const options = getRenderOptions()
 
 const Post = ({ pageContext, data }) => {
   const { featuredMedia } = data.contentfulPost;
+  const img = getImage(featuredMedia);
   const {
     title,
     date,
@@ -27,8 +29,9 @@ const Post = ({ pageContext, data }) => {
         <PostInfo date={date} />
         {
           featuredMedia ?
-          <Img
-            fluid={featuredMedia.fluid}
+          <GatsbyImage
+            image={img}
+            alt={title}
             className="post-image"
           /> :
           null
@@ -52,9 +55,11 @@ export const pageQuery = graphql`
       id
       featuredMedia {
         description
-        fluid {
-          ...GatsbyContentfulFluid
-        }
+        gatsbyImageData (
+          layout: FULL_WIDTH,
+          placeholder: BLURRED
+          formats: [AUTO, WEBP]
+        )
       }
     }
   }`

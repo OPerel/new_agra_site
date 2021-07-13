@@ -4,16 +4,17 @@ import Layout from "../components/layout/layout";
 import PageLayout from '../components/pageLayout/pageLayout';
 import PageHeader from '../components/pageHeader/pageHeader';
 import ContactUs from '../components/contact/contact';
-import { renderRichText } from "gatsby-source-contentful/rich-text"
-import getRenderOptions from "../utils/renderOptions"
+import { renderRichText } from "gatsby-source-contentful/rich-text";
+import getRenderOptions from "../utils/renderOptions";
+import { getImage } from "gatsby-plugin-image"
 
 const options = getRenderOptions();
 
 const Page = ({ pageContext, data }) => {
-  const img = data.contentfulPage.featuredMedia.fluid;
+  const img = getImage(data.contentfulPage.featuredMedia);
   return (
     <Layout pageTitle={pageContext.title}>
-      <PageHeader imgFile={img} title={pageContext.title} />
+      <PageHeader img={img} title={pageContext.title} />
       <PageLayout>
         {
           pageContext.acf
@@ -50,9 +51,11 @@ export const pageQuery = graphql`
     contentfulPage(id: { eq: $id }) {
       id
       featuredMedia {
-        fluid {
-          ...GatsbyContentfulFluid
-        }
+        gatsbyImageData(
+          layout: FULL_WIDTH,
+          placeholder: BLURRED
+          formats: [AUTO, WEBP]
+        )
       }
     }
   }`

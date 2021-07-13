@@ -2,15 +2,20 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import './clients.css';
+import { getImage, GatsbyImage } from "gatsby-plugin-image"
 
 const queryClients = graphql`{
   allContentfulAsset(filter:{description:{regex: "/clients/"}}) {
     edges {
       node {
         id
-        fluid {
-          ...GatsbyContentfulFluid
-        }
+        title
+        gatsbyImageData (
+          height: 120,
+          width: 120,
+          formats: [AUTO],
+          placeholder: BLURRED
+        )
       }
     }
   }
@@ -25,11 +30,12 @@ const Clients = () => {
       <div className="clients container">
         {
           edges.map(edge => {
-            const { fluid } = edge.node;
+            const img = getImage(edge.node);
             return (
               <div key={edge.node.id}>
-                <Img
-                  fluid={fluid}
+                <GatsbyImage
+                  image={img}
+                  alt={edge.node.title}
                   className="client-img"
                 />
               </div>
@@ -41,22 +47,26 @@ const Clients = () => {
         <div className="slide-track">
           {
             edges.map(edge => {
-              const { fluid } = edge.node;
+              const img = getImage(edge.node);
               return (
-                <Img
+                <GatsbyImage
                   key={edge.node.id}
-                  fluid={fluid}
+                  image={img}
+                  alt={edge.node.title}
+                  className="client-img"
                 />
               )
             })
           }
           {
             edges.map(edge => {
-              const { fluid } = edge.node;
+              const img = getImage(edge.node);
               return (
-                <Img
+                <GatsbyImage
                   key={edge.node.id}
-                  fluid={fluid}
+                  image={img}
+                  alt={edge.node.title}
+                  className="client-img"
                 />
               )
             })

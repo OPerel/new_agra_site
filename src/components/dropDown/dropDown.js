@@ -1,62 +1,51 @@
-import React, { Component } from 'react';
+import React, { useState } from "react"
 import Menus from '../menus/menus';
-import { graphql, StaticQuery } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 import './dropDown.css';
-import Img from 'gatsby-image';
 import '../../images/icons8-menu-filled-50.png';
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const menuham = graphql`{
   icon: file(relativePath:{eq: "icons8-menu-filled-50.png"}) {
     childImageSharp {
-      fixed (width: 25, height: 25) {
-        ...GatsbyImageSharpFixed_tracedSVG
-      }
+      gatsbyImageData (
+        height: 25,
+        width: 25,
+        formats: [AUTO, AVIF],
+        placeholder: BLURRED
+      )
     }
   }
 }`
 
-class DropDown extends Component {
-  constructor() {
-    super();
-    this.state = {
-      showMenu: false,
-    };
-  };
+const DropDown = () => {
+  const [showMenu, setShowMenu] = useState(false);
 
-  showMenu = (event) => {
+  const handleShowMenu = (event) => {
     event.preventDefault();
-    this.setState({ showMenu: true }, () => {
-      document.addEventListener('click', this.closeMenu);
-    });
+    setShowMenu(true);
+    document.addEventListener('click', closeMenu);
   };
 
-  closeMenu = () => {
-    this.setState({ showMenu: false }, () => {
-      document.removeEventListener('click', this.closeMenu);
-    });
+  const closeMenu = () => {
+    setShowMenu(false);
+    document.removeEventListener('click', closeMenu);
   };
 
-  render () {
-    return (
-      <StaticQuery query={menuham}
-        render={data => {
-          const { fixed } = data.icon.childImageSharp;
-          return (
-            <div>
-              <button id="nav-btn" onClick={this.showMenu}>
-                <Img fixed={fixed} />
-              </button>
-              {
-                this.state.showMenu
-                  ? <div className="dropdown"><Menus menuList={['Main']} /></div>
-                  : null
-              }
-            </div>
-          );
-        }
-      }/>
-    )
-  }
+  const data = useStaticQuery(menuham);
+  const icon = getImage(data.icon);
+  return (
+    <div>
+      <button id="nav-btn" onClick={handleShowMenu}>
+        <GatsbyImage image={icon} alt="menu" />
+      </button>
+      {
+        showMenu
+          ? <div className="dropdown"><Menus menuList={['Main']} /></div>
+          : null
+      }
+    </div>
+  )
 }
 
 export default DropDown;

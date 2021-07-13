@@ -1,14 +1,14 @@
 import React from 'react';
-import BgImg from 'gatsby-background-image';
+import { BgImage } from "gbimage-bridge"
 import './pageHeader.css';
 
 const PageHeader = (props) => (
   <>
-    <BgImg fluid={props.imgFile} className="header-bg">
+    <BgImage image={props.img} className="header-bg">
       <div className="container">
         <h1 dangerouslySetInnerHTML={{ __html: props.title }} />
       </div>
-    </BgImg>
+    </BgImage>
   </>
 )
 

@@ -5,6 +5,7 @@ import AnchorLink from 'react-anchor-link-smooth-scroll';
 import Menus from '../menus/menus';
 import './footer.css';
 import '../../images/icons8-double-up-32.png';
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const footerMenus = ['אתר אגרא', 'שירותים', 'כתבות אחרונות'];
 
@@ -13,14 +14,17 @@ const Footer = () => (
     graphql`{
       icon: file(relativePath:{eq: "icons8-double-up-32.png"}) {
         childImageSharp {
-          fixed (width: 24, height: 24) {
-            ...GatsbyImageSharpFixed
-          }
+          gatsbyImageData (
+            height: 24,
+            width: 24,
+            formats: [AUTO, AVIF],
+            placeholder: BLURRED
+          )
         }
       }
     }`
   } render={data => {
-      const { fixed } = data.icon.childImageSharp;
+      const icon = getImage(data.icon);
       return (
         <footer>
           <div className="container-fluid">
@@ -32,7 +36,7 @@ const Footer = () => (
             <div className="btn-up">
               <button>
                 <AnchorLink href="#top">
-                  <Img fixed={fixed} alt="double arrow" />
+                  <GatsbyImage image={icon} alt="double arrow" />
                 </AnchorLink>
               </button>
             </div>
