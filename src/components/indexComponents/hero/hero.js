@@ -1,9 +1,11 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import BgImg from 'gatsby-background-image';
 import { animated, useSpring, config } from 'react-spring';
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import Button from '../../button/button';
+import { convertToBgImage } from "gbimage-bridge";
+import { getImage } from "gatsby-plugin-image";
+import BackgroundImage from 'gatsby-background-image';
 import './hero.css';
 
 const Hero = () => {
@@ -14,15 +16,18 @@ const Hero = () => {
   });
   const data = useStaticQuery(graphql`{
     contentfulAsset(title:{eq:"home"}) {
-      fluid {
-        ...GatsbyContentfulFluid
-      }
+      gatsbyImageData(
+        layout: FULL_WIDTH,
+        placeholder: BLURRED,
+        formats: [AUTO, WEBP]
+      )
     }
   }`);
-  const { fluid } = data.contentfulAsset;
+  const img = getImage(data.contentfulAsset);
+  const bgImage = convertToBgImage(img);
   return (
     <>
-      <BgImg className="hero" fluid={fluid}>
+      <BackgroundImage className="hero" {...bgImage} >
         <div className="hero-content">
           <animated.h1 style={animateProps}>אגרא יעוץ ותכנון בע"מ</animated.h1>
           <animated.h2 style={animateProps}>
@@ -37,7 +42,7 @@ const Hero = () => {
             </AnchorLink>
           </animated.div>
         </div>
-      </BgImg>
+      </BackgroundImage>
     </>
   )
 }

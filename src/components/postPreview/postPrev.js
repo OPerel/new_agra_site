@@ -1,10 +1,11 @@
 import React from 'react';
-import Img from 'gatsby-image';
 import { Link } from 'gatsby';
 import PostInfo from '../postInfo';
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import './postPrev.css';
 
 const PostPrev = (props) => {
+  const img = getImage(props.img);
   return (
     <div>
       <Link to={`/post/${props.slug}`}>
@@ -14,8 +15,8 @@ const PostPrev = (props) => {
             <p dangerouslySetInnerHTML={{ __html: props.excerpt }} />
           </div>
           {
-            props.img
-              ? <Img fixed={props.img} className="prev-img" />
+            img
+              ? <GatsbyImage image={img} alt={props.title} className="prev-img" />
               : null
           }
         </div>

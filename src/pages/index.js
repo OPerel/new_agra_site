@@ -21,7 +21,7 @@ const Index = () => {
 export default Index;
 /**
  * TODO:
- * 
+ *
  * 3. better styles for dropdown btn and menu
  * 4. add reveal animations for all landing page's sections
  * 5. i18n

@@ -12,9 +12,12 @@ const query = graphql`{
         title
         excerpt
         excerptIcon {
-          fixed(height: 120, width: 120) {
-            ...GatsbyContentfulFixed
-          }
+          gatsbyImageData (
+            height: 120,
+            width: 120,
+            formats: [AUTO, PNG],
+            placeholder: BLURRED
+          )
         }
       }
     }

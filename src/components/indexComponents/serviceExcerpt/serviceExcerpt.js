@@ -1,16 +1,16 @@
 import React from 'react';
-import Img from 'gatsby-image';
+import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import './serviceExcerpt.css';
 
 const ServiceExcerpt = ({ page }) => {
-  const { fixed } = page.excerptIcon;
+  const icon = getImage(page.excerptIcon);
   return (
     <div className="service">
       <div>
         <h4 dangerouslySetInnerHTML={{ __html: page.title }} />
         <p dangerouslySetInnerHTML={{ __html: page.excerpt }} />
       </div>
-      <Img fixed={fixed}/>
+      <GatsbyImage image={icon} alt={`${page.title} excerpt icon`} />
     </div>
   )
 }

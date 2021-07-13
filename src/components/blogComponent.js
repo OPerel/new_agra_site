@@ -12,9 +12,12 @@ const postQuery = graphql`{
         date
         excerpt
         featuredMedia {
-          fixed(width: 200, height: 100) {
-            ...GatsbyContentfulFixed
-          }
+          gatsbyImageData (
+            height: 100,
+            width: 200,
+            formats: [AUTO, WEBP],
+            placeholder: BLURRED
+          )
         }
       }
     }
@@ -23,7 +26,7 @@ const postQuery = graphql`{
 
 const BlogComponent = () => {
   const data = useStaticQuery(postQuery);
-  const { edges }  = data.allContentfulPost;
+  const { edges } = data.allContentfulPost;
   return (
     edges.map((edge) => {
       return (
@@ -33,7 +36,7 @@ const BlogComponent = () => {
           date={edge.node.date}
           title={edge.node.title}
           excerpt={edge.node.excerpt}
-          img={edge.node.featuredMedia.fixed}
+          img={edge.node.featuredMedia}
         />
       )
     })

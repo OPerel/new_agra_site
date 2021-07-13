@@ -21,15 +21,11 @@ exports.createPages = async ({ graphql, actions }) => {
               references {
                 __typename
                 contentful_id
-                fluid {
-                  srcWebp
-                  srcSetWebp
-                  base64
-                  aspectRatio
-                  src
-                  srcSet
-                  sizes
-                }
+                gatsbyImageData (
+                  layout: CONSTRAINED
+                  formats: [AUTO, WEBP]
+                  placeholder: BLURRED
+                )
                 title
               }
             }
@@ -53,16 +49,11 @@ exports.createPages = async ({ graphql, actions }) => {
               references {
                 __typename
                 contentful_id
-                fixed(width: 400, height: 200) {
-                  src
-                  srcSet
-                  width
-                  srcWebp
-                  srcSetWebp
-                  height
-                  base64
-                  aspectRatio
-                }
+                gatsbyImageData (
+                  layout: CONSTRAINED
+                  formats: [AUTO, WEBP]
+                  placeholder: BLURRED
+                )
               }
             }
           }
