@@ -10,9 +10,7 @@ const queryClients = graphql`{
         id
         title
         gatsbyImageData (
-          height: 120,
-          width: 120,
-          formats: [AUTO],
+          formats: [AUTO, PNG],
           placeholder: BLURRED
         )
       }
