@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import validate from '../utils/validator';
-import Button from '../components/button';
+import validate from '../../utils/validator';
+import Button from '../button/button';
 import './contact.css';
 
 const encode = (data) => {

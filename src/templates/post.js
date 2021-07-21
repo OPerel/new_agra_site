@@ -1,40 +1,48 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Layout from "../components/layout";
-import PageLayout from '../components/pageLayout';
-import Img from 'gatsby-image';
+import Layout from "../components/layout/layout";
+import PageLayout from '../components/pageLayout/pageLayout';
 import PostInfo from '../components/postInfo';
 import './post.css';
+import { renderRichText } from "gatsby-source-contentful/rich-text";
+import getRenderOptions from "../utils/renderOptions";
+import { getImage, GatsbyImage } from "gatsby-plugin-image"
 
-export default ({ pageContext, data }) => {
-  const { featured_media } = data.wordpressPost;
+const options = getRenderOptions()
+
+const Post = ({ pageContext, data }) => {
+  const { featuredMedia } = data.contentfulPost;
+  const img = getImage(featuredMedia);
+  const {
+    title,
+    date,
+    content
+  } = pageContext;
   return (
-    <Layout pageTitle={pageContext.title}>
+    <Layout pageTitle={title}>
       <PageLayout>
         <h1
-        className="post-heading"
-        dangerouslySetInnerHTML={{ __html: pageContext.title }}
-        ></h1>
-        <PostInfo author={pageContext.author.name} date={pageContext.date} />
+          className="post-heading"
+          dangerouslySetInnerHTML={{ __html: title }}
+        />
+        <PostInfo date={date} />
         {
-          featured_media ?
-          <Img
-          fluid={data.wordpressPost.featured_media.localFile.childImageSharp.fluid}
-          className="post-image"
+          featuredMedia ?
+          <GatsbyImage
+            image={img}
+            alt={title}
+            className="post-image"
           /> :
           null
         }
         {
-          featured_media && featured_media.caption ?
+          featuredMedia && featuredMedia.description ?
           <p
-          className="img-caption"
-          dangerouslySetInnerHTML={{ __html: featured_media.caption }}></p> :
-          null
+            className="img-caption"
+            dangerouslySetInnerHTML={{ __html: featuredMedia.description }}
+          /> : null
         }
-        <div
-        className="post-content"
-        dangerouslySetInnerHTML={{ __html: pageContext.content }}
-        ></div>
+        {renderRichText(content, options)}
       </PageLayout>
     </Layout>
   )
@@ -42,17 +50,17 @@ export default ({ pageContext, data }) => {
 
 export const pageQuery = graphql`
   query BlogPostByID($id: String!) {
-    wordpressPost(id: { eq: $id }) {
+    contentfulPost(id: { eq: $id }) {
       id
-      featured_media {
-        caption
-        localFile {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
+      featuredMedia {
+        description
+        gatsbyImageData (
+          layout: FULL_WIDTH,
+          placeholder: BLURRED
+          formats: [AUTO, WEBP]
+        )
       }
     }
   }`
+
+export default Post;

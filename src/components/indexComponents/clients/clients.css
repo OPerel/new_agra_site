@@ -8,8 +8,8 @@
             transform: translate(0);
   }
   100% {
-    -webkit-transform: translateX(-2000px);
-            transform: translateX(-2000px);
+    -webkit-transform: translateX(-2900px);
+            transform: translateX(-2900px);
   }
 }
 
@@ -19,14 +19,14 @@
             transform: translate(0);
   }
   100% {
-    -webkit-transform: translateX(-2000px);
-            transform: translateX(-2000px);
+    -webkit-transform: translateX(-2900px);
+            transform: translateX(-2900px);
   }
 }
 
 .clients-mobile {
   position: relative;
-  height: 150px;
+  height: 160px;
   overflow: hidden;
 }
 
@@ -36,10 +36,10 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 4000px;
+  width: 5800px;
   padding: 20px 0;
   display: grid;
-  grid-template-columns: repeat(32, 1fr);
+  grid-template-columns: repeat(48, 1fr);
   -webkit-box-align: center;
         align-items: center;
   -webkit-transform: translate3d(0, 0, 0);

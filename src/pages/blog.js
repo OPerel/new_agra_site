@@ -1,15 +1,16 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Layout from '../components/layout';
-import PageLayout from '../components/pageLayout';
-import PageHeader from '../components/pageHeader';
+import Layout from '../components/layout/layout';
+import PageLayout from '../components/pageLayout/pageLayout';
+import PageHeader from '../components/pageHeader/pageHeader';
 import BlogComponent from '../components/blogComponent';
+import { getImage } from "gatsby-plugin-image"
 
-export default ({ data }) => {
-  const { fluid } = data.wordpressPage.featured_media.localFile.childImageSharp;
+const Blog = ({ data }) => {
+  const img = getImage(data.contentfulPage.featuredMedia);
   return (
-    <Layout pageTitle={data.wordpressPage.title}>
-      <PageHeader imgFile={fluid} title={data.wordpressPage.title} />
+    <Layout pageTitle={data.contentfulPage.title}>
+      <PageHeader img={img} title={data.contentfulPage.title} />
       <PageLayout>
         <BlogComponent />
       </PageLayout>
@@ -18,17 +19,17 @@ export default ({ data }) => {
 }
 
 export const pageQuery = graphql`{
-    wordpressPage(slug: { eq: "blog" }) {
+    contentfulPage(slug: { eq: "blog" }) {
       id
       title
-      featured_media {
-        localFile {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
+      featuredMedia {
+        gatsbyImageData (
+          layout: FULL_WIDTH,
+          placeholder: BLURRED
+          formats: [AUTO, WEBP]
+        )
       }
     }
   }`
+
+export default Blog;

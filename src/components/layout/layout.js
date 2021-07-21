@@ -1,13 +1,13 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import Header from "./header";
-import Footer from "./footer";
+import Header from "../header/header";
+import Footer from "../footer/footer";
 import "./layout.css"
 
 const Layout = ({ children, pageTitle }) => (
   <div dir="rtl">
-    <div id="top" offset="-900"></div>
+    <div id="top" offset="-900" />
     <Header pageTitle={pageTitle} />
     <div>{children}</div>
     <Footer />
