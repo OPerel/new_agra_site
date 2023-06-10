@@ -6,7 +6,7 @@
   "author": "Ori Perelman <oriperelman@gmail.com>",
   "dependencies": {
     "@contentful/rich-text-types": "^15.0.0",
-    "gatsby": "^3.9.1",
+    "gatsby": "^4.25.7",
     "gatsby-background-image": "^1.5.3",
     "gatsby-cli": "^3.9.0",
     "gatsby-image": "^3.9.0",
