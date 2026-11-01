@@ -1,15 +1,14 @@
 import React from 'react';
-import { BgImage } from "gbimage-bridge"
+import { GatsbyImage } from "gatsby-plugin-image";
 import './pageHeader.css';
 
 const PageHeader = (props) => (
-  <>
-    <BgImage image={props.img} className="header-bg">
-      <div className="container">
-        <h1 dangerouslySetInnerHTML={{ __html: props.title }} />
-      </div>
-    </BgImage>
-  </>
+  <header className="header-bg">
+    <GatsbyImage image={props.img} alt="logo" className="header-bg-image" />
+    <div className="container header-bg-content">
+      <h1 dangerouslySetInnerHTML={{ __html: props.title }} />
+    </div>
+  </header>
 )
 
 export default PageHeader;
