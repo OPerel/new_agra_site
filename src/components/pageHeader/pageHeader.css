@@ -1,19 +1,27 @@
 .header-bg {
   height: 40vh;
   margin-bottom: 5%;
-}
-
-.header-bg::before {
-  background-color: rgba(0, 0, 0, 0.4);
-  background-blend-mode: overlay;
+  position: relative;
+  overflow: hidden;
 }
 
 .header-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
   background-color: rgba(0, 0, 0, 0.4);
-  background-blend-mode: overlay;
+  z-index: 1;
 }
 
-.header-bg div {
+.header-bg-image {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+}
+
+.header-bg-content {
+  position: relative;
+  z-index: 2;
   height: 100%;
   display: -webkit-box;
   display: flex;
@@ -21,7 +29,7 @@
   justify-content: flex-start;
 }
 
-.header-bg div h1 {
+.header-bg-content h1 {
   margin: auto 0;
   color: #ffffff;
 }

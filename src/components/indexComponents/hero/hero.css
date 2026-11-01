@@ -2,24 +2,32 @@
   display: -webkit-box;
   display: flex;
   -webkit-box-align: center;
-        align-items: center;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
   height: 90vh;
   color: #ffffff;
 }
 
-.hero::before,
 .hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
   background-color: rgba(0, 0, 0, 0.5);
-  background-blend-mode: overlay;
+  z-index: 1;
+}
+
+.hero-background {
+  position: absolute;
+  inset: 0;
+  height: 100%;
 }
 
 .hero .hero-content {
   margin: 0 auto;
   text-align: center;
+  position: relative;
+  z-index: 2;
 }
 
 .hero .hero-content h1 {
