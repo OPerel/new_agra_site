@@ -48,7 +48,6 @@
   },
   "overrides": {
     "@graphql-tools/utils": "^13.2.0",
-    "@parcel/reporter-dev-server": "^2.16.4",
     "cookie": "^0.7.2",
     "decode-uri-component": "^0.5.1",
     "file-type": "^21.3.1",
